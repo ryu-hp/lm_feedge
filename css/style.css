@@ -257,7 +257,7 @@ select::-ms-expand {
 }
 
 .section--kv {
-  background: url("/image/KV_bg.jpg") no-repeat center/cover;
+  background: url("../image/KV_bg.jpg") no-repeat center/cover;
   text-align: center;
   color: #ffffff;
   padding: 6.25rem 0;

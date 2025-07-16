@@ -1,7 +1,7 @@
 @use "../global" as *;
 
 .section--kv {
-  background: url('/image/KV_bg.jpg') no-repeat center/cover;
+  background: url('../image/KV_bg.jpg') no-repeat center/cover;
   text-align: center;
   color: $color-white;
   padding: rem(100) 0;
