@@ -1,0 +1,8 @@
+@use "../global" as *;
+
+.footer {
+  background-color: $color-theme;
+  color: $color-white;
+  text-align: center;
+  padding: rem(20) 0;
+}

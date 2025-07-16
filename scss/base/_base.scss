@@ -33,6 +33,11 @@ a:hover {
     }
 }
 
+// index.html では container クラスを使用しているため
+.container {
+    @extend .inner;
+}
+
 .only-sp {
     display: none;
     @include mq(md) {

@@ -1,0 +1,18 @@
+@use "../global" as *;
+
+.section--culture {
+  padding: rem(80) 0;
+}
+
+.culture__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(200), 1fr));
+  gap: rem(20);
+  margin-top: rem(40);
+}
+
+.culture__item {
+  padding: rem(10);
+  background: $color-bg_gray;
+  border-radius: rem(4);
+}

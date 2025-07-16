@@ -1,0 +1,11 @@
+@use "../global" as *;
+
+.section--services {
+  padding: rem(80) 0;
+  background-color: $color-bg_gray;
+  text-align: center;
+}
+
+.services__text {
+  margin-top: rem(20);
+}
