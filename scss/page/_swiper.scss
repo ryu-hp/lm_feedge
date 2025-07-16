@@ -1,0 +1,24 @@
+@use "../global" as *;
+
+.slide-image {
+  margin-top: rem(40);
+  text-align: center;
+}
+
+.image-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-swiper img {
+  width: 100%;
+  height: auto;
+}
+
+#image-swiper_pagination {
+  margin-top: rem(16);
+}
+
+#image-swiper_pagination .swiper-pagination-bullet-active {
+  background-color: $color-theme;
+}
