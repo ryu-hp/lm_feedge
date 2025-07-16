@@ -1,0 +1,26 @@
+@use "../global" as *;
+
+.section--numbers {
+  padding: rem(80) 0;
+  background-color: $color-bg_gray;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+  gap: rem(20);
+  text-align: center;
+  margin-top: rem(40);
+}
+
+.numbers__value {
+  font-size: clp(24);
+  font-weight: $bold;
+  color: $color-theme;
+}
+
+.numbers__label {
+  display: block;
+  margin-top: rem(4);
+  font-size: clp(14);
+}

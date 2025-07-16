@@ -1,0 +1,12 @@
+@use "../global" as *;
+
+.section--about {
+  padding: rem(80) 0;
+  text-align: center;
+}
+
+.about__text {
+  margin-top: rem(20);
+  font-size: clp(16);
+  line-height: 1.8;
+}

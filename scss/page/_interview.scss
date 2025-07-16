@@ -1,0 +1,23 @@
+@use "../global" as *;
+
+.section--interview {
+  padding: rem(80) 0;
+  text-align: center;
+}
+
+.interview__item {
+  margin-top: rem(40);
+}
+
+.interview__name {
+  font-weight: $bold;
+}
+
+.interview__experience {
+  font-size: clp(14);
+  color: $color-main_gray;
+}
+
+.interview__comment {
+  margin-top: rem(10);
+}
