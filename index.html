@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=1440">
   <title>FREEDGE - あなたの自由と本気で向き合う会社</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
 
@@ -39,10 +41,77 @@
 
   <section class="section section--about" id="about">
     <div class="section__inner container">
-      <h2 class="section__title">ABOUT FREEDGE</h2>
-      <p class="about__text">FREEDGEは「関わる人すべてにとって自由の架け橋となる」ことをミッションに設立されました。従業員、ご家族、お客様それぞれの「自由」を本気で応援し、理想の働き方やキャリア形成を叶える企業です。</p>
+      <h2 class="section__title section__title--about">
+        <div class="about__title about__title--top">
+          <img src="./image/about_title_about.svg" alt="about">
+        </div>
+        <div class="about__title about__title--top">
+          <img src="./image/about_title_freedge.svg" alt="FREEDGE">
+        </div>
+      </h2>
+      <div class="about__text">
+        <h3 class="about__sub-title">
+          全従業員、<br>
+          <span class="text--engineer">エンジニア</span>による<br>
+          <span class="text--engineer">エンジニア</span>のための会社。
+        </h3>
+      </div>
+      <div class="about__description">
+        <p class="about__paragragh">皆さんにとっての「自由」とは何でしょうか？</p>
+        <p class="about__paragragh">
+          当社では自分の人生を自分で選択できることだと考えています。<br>
+          こんなスキルやポジションで働きたい、<br>
+          リモートワークやフレックスを活用したい、<br>
+          子育てなどプライベートの時間を確保するために、残業をなくしたい、<br>
+          何歳までには年収がこれくらいになっていたいなど、<br>
+          仕事を通して実現できる自由はとても多いです。
+        </p>
+        <p class="about__paragragh">
+          その自由（選択肢）を手に入れられるよう、<br>
+          本気で向き合えば叶えられるのがエンジニアという職業であるため、<br>
+          当社はその自由の架け橋となれるよう、<br>
+          エンジニアひとりひとりに向き合い続けます。
+        </p>
+      </div>
     </div>
   </section>
+
+  <div class="slide-image">
+    <!-- Swiper -->
+      <div id="image-swiper" class="swiper image-swiper">
+        <!-- 必要に応じたwrapper -->
+        <div class="swiper-wrapper">
+          <!-- スライド -->
+          <div class="swiper-slide">
+            <img src="./image/about_slide_01.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_02.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_03.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_04.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_01.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_02.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_03.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/about_slide_04.jpg" alt="FREEDGEの従業員の様子">
+          </div>
+        </div>
+      </div>
+      <!-- /Swiper -->
+      <!-- 必要に応じてページネーション -->
+      <div id="image-swiper_pagination" class="swiper-pagination"></div>
+  </div>
 
   <section class="section section--work-style" id="work-style">
     <div class="section__inner container">
