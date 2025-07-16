@@ -18,7 +18,6 @@ img {
 }
 
 a {
-  -webkit-transition: opacity 0.3s ease;
   transition: opacity 0.3s ease;
 }
 
@@ -33,8 +32,7 @@ a:hover {
   padding-left: 1.5625rem;
   margin-right: auto;
   margin-left: auto;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 767px) {
   .inner, .container {
@@ -65,8 +63,7 @@ a {
 *,
 *::before,
 *::after {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 /* Remove default padding */
@@ -117,8 +114,7 @@ a {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 /* Make images easier to work with */
@@ -143,8 +139,7 @@ select {
 
 /* Blur images when they have no alt attribute */
 img:not([alt]) {
-  -webkit-filter: blur(10px);
-          filter: blur(10px);
+  filter: blur(10px);
 }
 
 /* フォームリセット */
@@ -193,8 +188,7 @@ select::-ms-expand {
 }
 .lp1 h3 {
   border-bottom: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   padding-bottom: 0;
   font-family: "Noto Sans JP", sans-serif !important;
 }
@@ -210,23 +204,16 @@ select::-ms-expand {
   color: #000000;
   font-size: clamp(1rem, 1rem + 0.0028742515 * (100vw - 375px), 1.15rem);
   background-color: #ffffff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 .header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  align-items: center;
+  justify-content: space-between;
   padding: 1.25rem 0;
 }
 
@@ -238,8 +225,6 @@ select::-ms-expand {
 }
 
 .nav__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1.25rem;
 }
@@ -382,10 +367,28 @@ select::-ms-expand {
 
 .faq__question {
   font-weight: 700;
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.25rem;
+}
+.faq__question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .faq__answer {
   margin-top: 0.25rem;
+  display: none;
+}
+
+.faq__item.is-open .faq__answer {
+  display: block;
+}
+.faq__item.is-open .faq__question::after {
+  content: "−";
 }
 
 .section--services {
@@ -444,9 +447,34 @@ select::-ms-expand {
   margin-top: 1.25rem;
 }
 
+.slide-image {
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.image-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-swiper img {
+  width: 100%;
+  height: auto;
+}
+
+#image-swiper_pagination {
+  margin-top: 1rem;
+}
+
+#image-swiper_pagination .swiper-pagination-bullet-active {
+  background-color: #025CB4;
+}
+
 .footer {
   background-color: #025CB4;
   color: #ffffff;
   text-align: center;
   padding: 1.25rem 0;
 }
+
+/*# sourceMappingURL=style.css.map */

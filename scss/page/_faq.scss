@@ -10,8 +10,28 @@
 
 .faq__question {
   font-weight: $bold;
+  cursor: pointer;
+  position: relative;
+  padding-right: rem(20);
+  &::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .faq__answer {
   margin-top: rem(4);
+  display: none;
+}
+
+.faq__item.is-open {
+  .faq__answer {
+    display: block;
+  }
+  .faq__question::after {
+    content: '−';
+  }
 }
