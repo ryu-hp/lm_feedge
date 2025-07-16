@@ -1,0 +1,13 @@
+@use "../global" as *;
+
+.section--work-style {
+  padding: rem(80) 0;
+  background-color: $color-bg_gray;
+  text-align: center;
+}
+
+.work-style__text {
+  margin-top: rem(20);
+  font-size: clp(16);
+  line-height: 1.8;
+}

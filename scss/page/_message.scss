@@ -1,0 +1,13 @@
+@use "../global" as *;
+
+.section--message {
+  padding: rem(80) 0;
+  text-align: center;
+  background: $gradient-bg-45;
+  color: $color-white;
+}
+
+.message__text {
+  margin-top: rem(20);
+  line-height: 1.8;
+}

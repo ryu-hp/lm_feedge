@@ -1,5 +1,41 @@
 @use "../global" as *;
 .header {
-    color: $color-black;
-    font-size: clp(16);
+  color: $color-black;
+  font-size: clp(16);
+  background-color: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: rem(20) 0;
+}
+
+.header__logo-link {
+  font-family: $second-font-family;
+  font-weight: $bold;
+  font-size: clp(24);
+  color: $color-theme;
+}
+
+.nav__list {
+  display: flex;
+  gap: rem(20);
+}
+
+.nav__link {
+  display: inline-block;
+  font-size: clp(14);
+  padding: rem(5) rem(10);
+}
+
+.nav__link--primary {
+  background-color: $color-theme;
+  color: $color-white;
+  border-radius: rem(4);
 }

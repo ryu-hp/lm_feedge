@@ -1,0 +1,47 @@
+@use "../global" as *;
+
+.section--entry {
+  padding: rem(80) 0;
+}
+
+.entry-form__group {
+  margin-top: rem(20);
+}
+
+.entry-form__label {
+  display: block;
+  margin-bottom: rem(4);
+  font-weight: $bold;
+}
+
+.entry-form__input,
+.entry-form__textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: rem(8);
+  border-radius: rem(4);
+  font-size: clp(16);
+}
+
+.entry-form__textarea {
+  min-height: rem(120);
+}
+
+.entry-form__submit {
+  margin-top: rem(20);
+  display: inline-block;
+  background: $color-theme;
+  color: $color-white;
+  padding: rem(12) rem(40);
+  border-radius: rem(4);
+}
+
+.entry-form__required {
+  margin-left: rem(4);
+  color: $color-red;
+  font-size: clp(12);
+}
+
+.entry-form__checkbox {
+  margin-top: rem(20);
+}

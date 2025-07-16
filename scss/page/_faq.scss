@@ -1,0 +1,17 @@
+@use "../global" as *;
+
+.section--faq {
+  padding: rem(80) 0;
+}
+
+.faq__item + .faq__item {
+  margin-top: rem(20);
+}
+
+.faq__question {
+  font-weight: $bold;
+}
+
+.faq__answer {
+  margin-top: rem(4);
+}
