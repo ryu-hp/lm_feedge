@@ -5,13 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     loop: true,
     centeredSlides: true,
     allowTouchMove: false,
-    freeMode: true,
+    freeMode: false,
     freeModeMomentum: false,
-    speed: 4000, // スライドが1周する速度（ミリ秒）
+    speed: 4000, // スライドアニメーションの速度（ミリ秒）
     autoplay: {
-      delay: 0, // 0にすることで止まらず流れ続ける
+      delay: 1, // 最小の遅延でスムーズな流れを維持
       disableOnInteraction: false,
+      pauseOnMouseEnter: false,
     },
+    loopAdditionalSlides: 1, // ループ時のスムーズさを向上
+    slidesPerGroup: 1,
     // 上下中央寄せ
     on: {
       init: function() {
