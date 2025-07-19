@@ -26,17 +26,19 @@ document.addEventListener('DOMContentLoaded', () => {
     spaceBetween: 32,
     loop: true,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.interview__swiper-pagination',
       clickable: true,
     },
-    breakpoints: {
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 32,
-      },
-      900: {
-        slidesPerView: 3,
-        spaceBetween: 32,
+    navigation: {
+      nextEl: '.swiper-button-next-interview',
+      prevEl: '.swiper-button-prev-interview',
+    },
+    on: {
+      init: function() {
+        // スライド幅を340pxに固定
+        document.querySelectorAll('.interview-swiper .swiper-slide').forEach(slide => {
+          slide.style.width = '340px';
+        });
       }
     }
   });
