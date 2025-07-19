@@ -4,15 +4,27 @@
   background: url('../image/KV_bg.jpg') no-repeat center/cover;
   text-align: center;
   color: $color-white;
-  padding: rem(100) 0;
+  padding: rem(60) 0;
+  height: calc(1080 / 1920 * 100vw);
 }
-
+.section__inner--kv {
+  position: relative;
+  height: 100%;
+}
+.kv__text-group {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
 .kv__text {
-  max-width: rem(600);
   margin: 0 auto;
+  height: calc(1324 / 1920 * 100%);
 }
 
 .kv__text--sub {
   margin-top: rem(20);
-  font-size: clp(18);
+  font-size: rem(32);
+  font-weight: 900;
 }

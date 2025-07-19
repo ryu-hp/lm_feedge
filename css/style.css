@@ -259,17 +259,33 @@ select::-ms-expand {
   background: url("../image/KV_bg.jpg") no-repeat center/cover;
   text-align: center;
   color: #ffffff;
-  padding: 6.25rem 0;
+  padding: 3.75rem 0;
+  height: 56.25vw;
+}
+
+.section__inner--kv {
+  position: relative;
+  height: 100%;
+}
+
+.kv__text-group {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 0;
 }
 
 .kv__text {
-  max-width: 37.5rem;
   margin: 0 auto;
+  height: 68.9583333333%;
 }
 
 .kv__text--sub {
   margin-top: 1.25rem;
-  font-size: clamp(1.125rem, 1.125rem + 0.0032335329 * (100vw - 375px), 1.29375rem);
+  font-size: 2rem;
+  font-weight: 900;
 }
 
 .section--about {
