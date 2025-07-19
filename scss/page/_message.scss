@@ -11,3 +11,115 @@
   margin-top: rem(20);
   line-height: 1.8;
 }
+.section--message {
+  background: #f7fbff;
+  padding: 80px 0;
+
+  .section__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+
+  .message__image {
+    flex: 0 0 auto;
+    max-width: 800px;
+    width: 100%;
+    img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0, 88, 180, 0.10);
+      display: block;
+    }
+  }
+
+  .message__text-group {
+    flex: 1 1 0;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .section__title {
+    font-size: 120px;
+    color: #1061AB;
+    margin-bottom: 32px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: left;
+    letter-spacing: -0.04em;
+  }
+
+  .message__text {
+    font-size: 20px;
+    color: #333;
+    line-height: 2;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .message__namge {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 16px;
+
+    .message__job {
+      font-size: 16px;
+      color: #0070C5;
+      font-weight: bold;
+    }
+    .message__name-text img {
+      height: 32px;
+      vertical-align: middle;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .section--message .section__inner {
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+  }
+  .section--message .message__image {
+    max-width: 100vw;
+  }
+  .section--message .section__title {
+    font-size: 64px;
+  }
+}
+
+@media (max-width: 900px) {
+  .section--message .section__inner {
+    flex-direction: column;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  .section--message .message__image {
+    margin: 0 auto;
+  }
+  .section--message .message__content {
+    width: 100%;
+  }
+  .section--message .section__title,
+  .section--message .message__text {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .section--message .section__title {
+    font-size: 36px;
+  }
+  .section--message .message__text {
+    font-size: 16px;
+  }
+}
