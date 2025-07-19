@@ -1169,6 +1169,32 @@ select::-ms-expand {
   background-color: #025CB4;
 }
 
+.footer {iper .swiper-slide {
+  background-color: #025CB4;
+  color: #ffffff; !important;
+  text-align: center;
+  padding: 1.25rem 0;
+}image-swiper .slide-portrait {
+
+
+
+
+
+
+
+
+
+
+
+
+
+}  width: 565px !important;.image-swiper .slide-landscape {}  width: 424px !important;.image-swiper .slide-portrait {}  margin-right: 0 !important;  width: auto !important;.image-swiper .swiper-slide {  width: 424px !important;
+}
+
+.image-swiper .slide-landscape {
+  width: 565px !important;
+}
+
 .footer {
   background-color: #025CB4;
   color: #ffffff;

@@ -22,3 +22,17 @@
 #image-swiper_pagination .swiper-pagination-bullet-active {
   background-color: $color-theme;
 }
+
+// 追加: スライド幅調整
+.image-swiper .swiper-slide {
+  width: auto !important;
+  margin-right: 0 !important; // SwiperのspaceBetweenで制御
+}
+
+.image-swiper .slide-portrait {
+  width: 424px !important;
+}
+
+.image-swiper .slide-landscape {
+  width: 565px !important;
+}

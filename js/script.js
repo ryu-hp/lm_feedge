@@ -17,6 +17,22 @@ document.addEventListener('DOMContentLoaded', () => {
       type: 'bullets',
       clickable: true,
     },
+    spaceBetween: 28, // スライド間隔
+    on: {
+      init: function() {
+        // スライドごとに幅を設定
+        document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
+          if (slide.classList.contains('slide-portrait')) {
+            slide.style.width = '424px';
+          } else if (slide.classList.contains('slide-landscape')) {
+            slide.style.width = '565px';
+          } else {
+            // デフォルト幅
+            slide.style.width = '424px';
+          }
+        });
+      }
+    }
   });
 
   // Interview Swiper
