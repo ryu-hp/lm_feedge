@@ -296,6 +296,55 @@ select::-ms-expand {
   line-height: 1.8;
 }
 
+.work__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .work__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.work__item {
+  background: #0077cc;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.work__item-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+.work__item-text {
+  margin-bottom: 10px;
+}
+.work__item-text-head {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.work__item-text-description {
+  font-size: 14px;
+}
+.work__item-image img {
+  width: 50px;
+  height: 50px;
+}
+
 .section--interview {
   padding: 5rem 0;
   text-align: center;
