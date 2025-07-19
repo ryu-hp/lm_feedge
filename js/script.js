@@ -19,6 +19,28 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   });
 
+  // Interview Swiper
+  const interviewSwiper = new Swiper('.interview-swiper', {
+    slidesPerView: 'auto',
+    centeredSlides: true,
+    spaceBetween: 32,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 32,
+      },
+      900: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      }
+    }
+  });
+
   // FAQ accordion
   document.querySelectorAll('.faq__question').forEach((question) => {
     question.addEventListener('click', () => {
