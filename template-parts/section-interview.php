@@ -10,32 +10,52 @@
     <div class="interview__body">
       <div id="interview-swiper" class="swiper interview-swiper">
         <div class="swiper-wrapper">
-          <?php for ($i = 1; $i <= 3; $i++): ?>
-            <div class="swiper-slide">
-              <div class="interview__item">
-                <div class="interview__item-image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/image/interview_image_0<?php echo $i; ?>.jpg" alt="S.Nさん">
-                </div>
-                <div class="interview__item-text">
-                  <p class="interview__name">S.Nさん</p>
-                  <p class="interview__experience">ITエンジニア経験年数 5年</p>
-                </div>
+          <?php
+          $args = [
+            'post_type'      => 'interview',
+            'posts_per_page' => -1,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
+          ];
+          $interview_query = new WP_Query($args);
+          if ($interview_query->have_posts()):
+            while ($interview_query->have_posts()): $interview_query->the_post();
+              $name_initial = get_post_meta(get_the_ID(), 'interview_name_initial', true);
+              $career      = get_post_meta(get_the_ID(), 'interview_career', true);
+              $image_id    = get_post_meta(get_the_ID(), 'interview_image', true);
+              $image_url   = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+          ?>
+          <div class="swiper-slide">
+            <div class="interview__item">
+              <div class="interview__item-image">
+                <?php if ($image_url): ?>
+                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($name_initial); ?>">
+                <?php endif; ?>
+              </div>
+              <div class="interview__item-text">
+                <p class="interview__name"><?php echo esc_html($name_initial); ?></p>
+                <p class="interview__experience"><?php echo esc_html($career); ?></p>
               </div>
             </div>
-          <?php endfor; ?>
-          <?php for ($i = 1; $i <= 3; $i++): ?>
-            <div class="swiper-slide">
-              <div class="interview__item">
-                <div class="interview__item-image">
-                  <img src="<?php echo get_template_directory_uri(); ?>/image/interview_image_0<?php echo $i; ?>.jpg" alt="S.Nさん">
-                </div>
-                <div class="interview__item-text">
-                  <p class="interview__name">S.Nさん</p>
-                  <p class="interview__experience">ITエンジニア経験年数 5年</p>
-                </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="interview__item">
+              <div class="interview__item-image">
+                <?php if ($image_url): ?>
+                  <img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($name_initial); ?>">
+                <?php endif; ?>
+              </div>
+              <div class="interview__item-text">
+                <p class="interview__name"><?php echo esc_html($name_initial); ?></p>
+                <p class="interview__experience"><?php echo esc_html($career); ?></p>
               </div>
             </div>
-          <?php endfor; ?>
+          </div>
+          <?php
+            endwhile;
+            wp_reset_postdata();
+          endif;
+          ?>
         </div>
       </div>
       <div class="interview__swiper-pagination">
