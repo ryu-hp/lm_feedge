@@ -23,16 +23,26 @@
   background-color: $color-theme;
 }
 
-// 追加: スライド幅調整
-.image-swiper .swiper-slide {
-  width: auto !important;
-  margin-right: 0 !important; // SwiperのspaceBetweenで制御
+.swiper-slide {
+  width: auto !important; // JSで幅を上書きするため
 }
 
-.image-swiper .slide-portrait {
-  width: 424px !important;
+// 縦長スライド用
+.slide-portrait {
+  width: rem(320) !important;
+  max-width: 90vw;
 }
 
-.image-swiper .slide-landscape {
-  width: 565px !important;
+// 横長スライド用
+.slide-landscape {
+  width: rem(480) !important;
+  max-width: 95vw;
+}
+
+// 画像の高さ調整（必要に応じて）
+.slide-portrait img,
+.slide-landscape img {
+  height: auto;
+  max-height: rem(400);
+  object-fit: cover;
 }
