@@ -553,42 +553,66 @@
 
   <section class="section section--entry-form" id="entry-form">
     <div class="section__inner container">
-      <div class="entry-form__top-contents">
-        <div class="entry-form__top-text">
-          <h2 class="section__title">entry-form FORM</h2>
-          <p class="entry-form__description">
-            当社選考にご参加を希望される方は、エントリーフォームから必要事項の記入と選考書類を添付の上、ご連絡をお願いいたします。<br><br>
-            エントリーフォームではカジュアル面談の受付もしております。<br>
-            カジュアル面談では、ざっくばらんにお話を聞いてみたい、今後のキャリアや今の自分の市場価値について相談してみたい、などお気軽にお話できます！
-          </p>
-        </div>
+      <h2 class="section__title">entry form</h2>
+      <div class="entry-form__body">
+        <form class="wpcf7-form">
+          <div class="form-item">
+            <label class="form-item__label">希望職種 <span class="form-item__label--category">必須</span></label>
+            <div class="form-item__inputArea form-item__input--radio">
+              [radio* job-type use_label_element "エンジニア" "その他"]
+            </div>
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">お名前 <span class="form-item__label--category">必須</span></label>
+            [text* your-name class:form-item__input placeholder "例）日本 太郎"]
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">フリガナ <span class="form-item__label--category">必須</span></label>
+            [text* your-kana class:form-item__input placeholder "例）ニホン タロウ"]
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">メールアドレス <span class="form-item__label--category">必須</span></label>
+            [email* your-email class:form-item__input placeholder "xxxx@xxxx"]
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">電話番号 <span class="form-item__label--category">必須</span></label>
+            [text* your-tel class:form-item__input placeholder "山田 太郎"]
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">履歴書・職務経歴書の添付</label>
+            [file your-file class:form-item__input]
+          </div>
+
+          <div class="form-item">
+            <label class="form-item__label">その他お問い合わせ</label>
+            [textarea your-message class:form-item__input]
+          </div>
+
+          <div class="form-item">
+            <div class="form-item__inputArea">
+              <div class="form-item__privacy-text">
+                株式会社FREEDGE（以下「当社」）は、以下のとおり個人情報保護方針を定め、個人情報保護の仕組みを構築し、全従業員に個人情報保護の重要性の認識と取組みを徹底させることにより、個人情報の保護を推進致します。
+              </div>
+            </div>
+          </div>
+
+          <div class="form-item">
+            [checkbox* your-consent use_label_element class:form-item__check "プライバシーポリシーに同意する"]
+          </div>
+
+          <div class="form-item form-item--submit">
+            <div class="form-item__submit-content">
+              [submit class:form-item__submit "ENTRY"]
+            </div>
+          </div>
+        </form>
       </div>
-      <form class="entry-form" action="#" method="post">
-        <div class="entry-form__group">
-          <label class="entry-form__label" for="name">氏名<span class="entry-form__required">必須</span></label>
-          <input class="entry-form__input" type="text" id="name" name="name" required>
-        </div>
-        <div class="entry-form__group">
-          <label class="entry-form__label" for="email">メールアドレス<span class="entry-form__required">必須</span></label>
-          <input class="entry-form__input" type="email" id="email" name="email" required>
-        </div>
-        <div class="entry-form__group">
-          <label class="entry-form__label" for="tel">電話番号<span class="entry-form__required">必須</span></label>
-          <input class="entry-form__input" type="tel" id="tel" name="tel" required>
-        </div>
-        <div class="entry-form__group">
-          <label class="entry-form__label" for="resume">履歴書・職務経歴書</label>
-          <input class="entry-form__input" type="file" id="resume" name="resume">
-        </div>
-        <div class="entry-form__group">
-          <label class="entry-form__label" for="message">ご相談・要望</label>
-          <textarea class="entry-form__textarea" id="message" name="message"></textarea>
-        </div>
-        <div class="entry-form__checkbox">
-          <label><input type="checkbox" required>プライバシーポリシーに同意する</label>
-        </div>
-        <button class="entry-form__submit" type="submit">ENTRY</button>
-      </form>
+
     </div>
   </section>
 </main>
