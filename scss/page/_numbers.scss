@@ -40,15 +40,19 @@
   }
 
   .numbers__value {
-    font-size: 115px;
+    font-size: 32px;
     font-weight: bold;
     line-height: 1;
+    margin-bottom: 12px;
+    color: $color-theme;
+  }
+  .numbers__value span {
+    font-size: 115px;
     background: linear-gradient(180deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     text-fill-color: transparent;
-    margin-bottom: 12px;
   }
 
   .numbers__desc {

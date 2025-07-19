@@ -585,16 +585,20 @@ select::-ms-expand {
   letter-spacing: 0.05em;
 }
 .numbers__item .numbers__value {
-  font-size: 115px;
+  font-size: 32px;
   font-weight: bold;
   line-height: 1;
+  margin-bottom: 12px;
+  color: #025CB4;
+}
+.numbers__item .numbers__value span {
+  font-size: 115px;
   background: -webkit-gradient(linear, left top, left bottom, from(#0058B4), color-stop(50%, #0070C5), to(#089BE9));
   background: linear-gradient(180deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-fill-color: transparent;
-  margin-bottom: 12px;
 }
 .numbers__item .numbers__desc {
   font-size: 32px;
