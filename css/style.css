@@ -299,6 +299,40 @@ select::-ms-expand {
   line-height: 1.8;
 }
 
+.about__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.25rem;
+}
+
+.about__sub-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5.3125rem;
+}
+
+.abtou__description {
+  font-size: 1.375rem;
+  line-height: 2.26;
+  font-weight: 700;
+  letter-spacing: -0.07em;
+}
+
+@media screen and (max-width: 767px) {
+  .about__flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 .section--work-style {
   padding: 5rem 0;
   background-color: #F3F8FE;
