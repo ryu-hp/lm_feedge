@@ -38,6 +38,10 @@ a:hover {
   }
 }
 
+body {
+  background-color: #F3F7FF;
+}
+
 .only-sp {
   display: none;
 }

@@ -29,6 +29,9 @@ a:hover {
         padding-left: $padding-sp;
     }
 }
+body {
+    background-color: #F3F7FF;
+}
 
 // index.html では container クラスを使用しているため
 .container {
