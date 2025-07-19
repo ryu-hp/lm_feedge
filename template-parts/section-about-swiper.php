@@ -13,5 +13,4 @@
       <?php endfor; ?>
     </div>
   </div>
-  <div id="image-swiper_pagination" class="swiper-pagination"></div>
 </div>
