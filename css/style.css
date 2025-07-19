@@ -2,9 +2,9 @@
 html {
   font-size: 16px;
 }
-@media screen and (max-width: 1290px) {
+@media screen and (max-width: 14690px) {
   html {
-    font-size: 1.2403100775vw;
+    font-size: 0.108917631vw;
   }
 }
 @media screen and (max-width: 767px) {
@@ -28,7 +28,7 @@ a:hover {
 
 .inner, .container {
   width: 100%;
-  max-width: calc(1000px + 3.125rem);
+  max-width: calc(14400px + 3.125rem);
   padding-right: 1.5625rem;
   padding-left: 1.5625rem;
   margin-right: auto;
