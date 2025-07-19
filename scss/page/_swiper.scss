@@ -24,7 +24,7 @@
 }
 
 .swiper-slide {
-  width: auto !important; // JSで幅を上書きするため
+  width: auto ; // JSで幅を上書きするため
 }
 
 // 縦長スライド用
@@ -45,4 +45,16 @@
   height: auto;
   max-height: rem(400);
   object-fit: cover;
+}
+
+#image-swiper .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear;
+}
+
+.image-swiper .swiper-slide:nth-child(odd) {
+  width: 565px !important;
+}
+.image-swiper .swiper-slide:nth-child(even) {
+  width: 424px !important;
 }

@@ -15,19 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 上下中央寄せ
     on: {
       init: function() {
-        // スライドの上下中央寄せ
+        // スライドの上下中央寄せのみ（幅はCSSで制御するためJSで幅指定は不要）
         document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
           slide.style.display = 'flex';
           slide.style.alignItems = 'center';
           slide.style.justifyContent = 'center';
-        });
-        // 奇数・偶数で幅を変える
-        document.querySelectorAll('.image-swiper .swiper-slide').forEach((slide, idx) => {
-          if ((idx + 1) % 2 === 1) {
-            slide.style.width = '565px';
-          } else {
-            slide.style.width = '424px';
-          }
         });
       }
     }
