@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 'auto',
     loop: true,
     centeredSlides: true,
+    spaceBetween: 28,
     allowTouchMove: false,
     freeMode: false,
     freeModeMomentum: false,
