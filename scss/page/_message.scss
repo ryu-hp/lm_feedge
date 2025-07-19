@@ -9,15 +9,6 @@
   margin-top: rem(20);
   line-height: 1.8;
 }
-.section__inner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 64px;
-  max-width: 1200px;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
 .message__flex {
   display: flex;
   flex-direction: row;
@@ -26,7 +17,6 @@
   gap: 64px;
   width: 100%;
 }
-
 .message__image {
   max-width: 800px;
   width: 100%;
@@ -82,11 +72,6 @@
   }
 
 @media (max-width: 1200px) {
-  .section--message .section__inner {
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-  }
   .section--message .message__image {
     max-width: 100vw;
   }
@@ -96,11 +81,6 @@
 }
 
 @media (max-width: 900px) {
-  .section--message .section__inner {
-    flex-direction: column;
-    gap: 32px;
-    align-items: flex-start;
-  }
   .section--message .message__image {
     margin: 0 auto;
   }
