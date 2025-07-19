@@ -4,8 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     slidesPerView: 'auto',
     loop: true,
     centeredSlides: true,
+    allowTouchMove: false,
+    freeMode: true,
+    freeModeMomentum: false,
+    speed: 4000, // スライドが1周する速度（ミリ秒）
     autoplay: {
-      delay: 4000,
+      delay: 0, // 0にすることで止まらず流れ続ける
       disableOnInteraction: false,
     },
     pagination: {
