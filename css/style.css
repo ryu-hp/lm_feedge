@@ -297,27 +297,12 @@ select::-ms-expand {
 }
 
 .work__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 20px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-@media (max-width: 1200px) {
-  .work__grid {
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  }
-}
-@media (max-width: 900px) {
-  .work__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 600px) {
-  .work__grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .work__item {
@@ -363,37 +348,43 @@ select::-ms-expand {
 }
 
 .section--interview {
-  padding: 5rem 0;
-  background: #f7fbff;
+  width: 100vw;
+  background: linear-gradient(49deg, #1061AB 0%, #2EA2E0 100%);
+  padding: 80px 0;
 }
-.section--interview .section__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.section--interview .section__title {
+
+.section__title {
   color: #fff;
   font-size: 48px;
   text-align: center;
   margin-bottom: 20px;
 }
-.section--interview .interview__title-group {
+
+.interview__title-group {
   text-align: center;
   margin-bottom: 2.5rem;
 }
-.section--interview .interview__title-sub {
-  font-size: clamp(1rem, 1rem + 0.0028742515 * (100vw - 375px), 1.15rem);
-  color: #555;
-  margin-top: 0.625rem;
+
+.interview__title-sub {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 50px;
 }
-.section--interview .interview__body {
+
+.interview__body {
   max-width: 900px;
   margin: 0 auto;
 }
-.section--interview .interview__body .interview-swiper {
+
+.interview-swiper {
   padding-bottom: 40px;
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
 }
-.section--interview .interview__body .interview-swiper .swiper-slide {
+
+.swiper-slide {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -401,12 +392,14 @@ select::-ms-expand {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.section--interview .interview__body .interview-swiper .interview__item {
+
+.interview__item {
+  width: 340px;
+  border-radius: 16px;
+  overflow: hidden;
   background: #fff;
-  border-radius: 24px;
-  -webkit-box-shadow: 0 4px 24px rgba(0, 88, 180, 0.1);
-          box-shadow: 0 4px 24px rgba(0, 88, 180, 0.1);
-  padding: 40px 32px 32px 32px;
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -417,19 +410,31 @@ select::-ms-expand {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 320px;
   -webkit-transition: -webkit-box-shadow 0.3s;
   transition: -webkit-box-shadow 0.3s;
   transition: box-shadow 0.3s;
   transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
   text-align: center;
+  margin-top: 2.5rem;
+  padding: 40px 32px 32px 32px;
+  position: relative;
 }
-.section--interview .interview__body .interview-swiper .interview__item-image {
-  margin-bottom: 24px;
+.interview__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(16, 97, 171, 0.6)), color-stop(70%, rgba(37, 45, 47, 0)));
+  background: linear-gradient(0deg, rgba(16, 97, 171, 0.6) 0%, rgba(37, 45, 47, 0) 70%);
 }
-.section--interview .interview__body .interview-swiper .interview__item-image img {
-  width: 120px;
-  height: 120px;
+
+.interview__item-image img {
+  width: 100%;
+  display: block;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 50%;
@@ -437,34 +442,26 @@ select::-ms-expand {
   -webkit-box-shadow: 0 2px 8px rgba(0, 112, 197, 0.12);
           box-shadow: 0 2px 8px rgba(0, 112, 197, 0.12);
 }
-.section--interview .interview__body .interview-swiper .interview__item-text {
+
+.interview__item-text {
   padding: 16px;
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: left;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
 }
-.section--interview .interview__body .interview-swiper .interview__item-text .interview__name {
+
+.interview__name {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 8px;
   color: #0058B4;
 }
-.section--interview .interview__body .interview-swiper .interview__item-text .interview__experience {
-  font-size: 16px;
-  color: #0070C5;
-}
-
-.interview__item {
-  margin-top: 2.5rem;
-}
-
-.interview__name {
-  font-weight: 700;
-}
 
 .interview__experience {
-  font-size: clamp(0.875rem, 0.875rem + 0.0025149701 * (100vw - 375px), 1.00625rem);
-  color: #333333;
+  font-size: 14px;
 }
 
 .interview__comment {
