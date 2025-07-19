@@ -11,17 +11,7 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
   flex-wrap: wrap;
-}
-
-@media (max-width: 1000px) {
-  .section__inner {
-    flex-direction: column;
-    gap: 40px;
-  }
 }
 
 .jobs__title-group {
@@ -75,9 +65,13 @@
   font-weight: bold;
 }
 
-.jobs__item-arrow img {
+.jobs__item-arrow {
   width: 32px;
   height: 32px;
+}
+
+.jobs__item-arrow img {
+  display: block;
 }
 
 .jobs__item-description {
