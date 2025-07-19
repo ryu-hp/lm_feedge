@@ -618,8 +618,6 @@ select::-ms-expand {
 .section--message {
   padding: 5rem 0;
   text-align: center;
-  background: linear-gradient(45deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
-  color: #ffffff;
 }
 
 .message__text {
@@ -627,11 +625,7 @@ select::-ms-expand {
   line-height: 1.8;
 }
 
-.section--message {
-  background: #f7fbff;
-  padding: 80px 0;
-}
-.section--message .section__inner {
+.section__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -647,14 +641,33 @@ select::-ms-expand {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
-.section--message .message__image {
+
+.message__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.message__image {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
   max-width: 800px;
   width: 100%;
 }
-.section--message .message__image img {
+.message__image img {
   width: 100%;
   max-width: 800px;
   border-radius: 16px;
@@ -662,7 +675,8 @@ select::-ms-expand {
           box-shadow: 0 4px 24px rgba(0, 88, 180, 0.1);
   display: block;
 }
-.section--message .message__text-group {
+
+.message__text-group {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
@@ -681,7 +695,8 @@ select::-ms-expand {
       -ms-flex-align: start;
           align-items: flex-start;
 }
-.section--message .section__title {
+
+.section__title {
   font-size: 120px;
   color: #1061AB;
   margin-bottom: 32px;
@@ -690,14 +705,16 @@ select::-ms-expand {
   text-align: left;
   letter-spacing: -0.04em;
 }
-.section--message .message__text {
+
+.message__text {
   font-size: 20px;
   color: #333;
   line-height: 2;
   margin-bottom: 32px;
   text-align: left;
 }
-.section--message .message__namge {
+
+.message__namge {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -707,12 +724,14 @@ select::-ms-expand {
   gap: 16px;
   margin-top: 16px;
 }
-.section--message .message__namge .message__job {
+
+.message__job {
   font-size: 16px;
   color: #0070C5;
   font-weight: bold;
 }
-.section--message .message__namge .message__name-text img {
+
+.message__name-text img {
   height: 32px;
   vertical-align: middle;
 }
@@ -765,6 +784,122 @@ select::-ms-expand {
     font-size: 16px;
   }
 }
+.section--jobs {
+  width: 100vw;
+  background: linear-gradient(49deg, #1061AB 0%, #2EA2E0 100%);
+  padding: 80px 0;
+  color: #fff;
+}
+
+.section__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .section__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 40px;
+  }
+}
+.jobs__title-group {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 300px;
+}
+
+.section__title {
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.jobs__description {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.jobs__contents {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+
+.jobs__item {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  color: #fff;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 16px;
+  -webkit-transition: background 0.3s;
+  transition: background 0.3s;
+}
+
+.jobs__item:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.jobs__item-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.jobs__item-head-main {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.jobs__item-arrow img {
+  width: 32px;
+  height: 32px;
+}
+
+.jobs__item-description {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .section--faq {
   padding: 5rem 0;
 }
