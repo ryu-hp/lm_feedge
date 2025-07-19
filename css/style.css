@@ -897,7 +897,7 @@ select::-ms-expand {
 }
 
 .faq__item + .faq__item {
-  margin-top: 1.25rem;
+  margin-top: 1.875rem;
 }
 
 .faq__question {
@@ -905,6 +905,7 @@ select::-ms-expand {
   cursor: pointer;
   position: relative;
   padding-right: 1.25rem;
+  padding-bottom: 1.8125rem;
 }
 
 .faq__question::after {
@@ -938,6 +939,8 @@ select::-ms-expand {
 .faq__answer {
   margin-top: 0.25rem;
   display: none;
+  background-color: #fff;
+  padding: 1.875rem 2rem 2.8125rem;
 }
 
 .faq__item.is-open .faq__answer {

@@ -5,7 +5,7 @@
 }
 
 .faq__item + .faq__item {
-  margin-top: rem(20);
+  margin-top: rem(30);
 }
 
 .faq__question {
@@ -13,6 +13,7 @@
   cursor: pointer;
   position: relative;
   padding-right: rem(20);
+  padding-bottom: rem(29);
 }
 
 .faq__question::after {
@@ -43,6 +44,8 @@
 .faq__answer {
   margin-top: rem(4);
   display: none;
+  background-color: #fff;
+  padding: rem(30) rem(32) rem(45);
 }
 
 .faq__item.is-open {
