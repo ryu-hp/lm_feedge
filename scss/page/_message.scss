@@ -28,7 +28,6 @@
 }
 
 .message__image {
-  flex: 0 0 auto;
   max-width: 800px;
   width: 100%;
   img {
@@ -41,7 +40,6 @@
 
 }
 .message__text-group {
-  flex: 1 1 0;
   min-width: 300px;
   display: flex;
   flex-direction: column;

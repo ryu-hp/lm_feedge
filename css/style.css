@@ -661,9 +661,6 @@ select::-ms-expand {
 }
 
 .message__image {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
   max-width: 800px;
   width: 100%;
 }
@@ -677,9 +674,6 @@ select::-ms-expand {
 }
 
 .message__text-group {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
   min-width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
