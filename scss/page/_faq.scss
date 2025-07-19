@@ -7,6 +7,18 @@
 .section__faq--inner {
   display: block;
 }
+.faq__flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: rem(20);
+}
+
+.faq__body {
+  max-width: 720px;
+  padding: rem(20);
+  width: 100%;
+}
 
 .faq__item + .faq__item {
   margin-top: rem(30);
@@ -84,16 +96,4 @@
   .faq__question::before {
     transform: translateY(-50%) rotate(270deg);
   }
-}
-
-.faq__flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(20);
-}
-
-.faq__body {
-  max-width: 720px;
-  padding: rem(20);
 }
