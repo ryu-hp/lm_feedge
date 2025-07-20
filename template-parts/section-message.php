@@ -14,7 +14,7 @@
           本来エンジニアは自分のスキルで自分の人生を選択できる、素晴らしい職業です。<br>
           当社はそんなエンジニアを1人でも増やせるよう、一人一人に向き合っていきます。
         </p>
-        <div class="message__namge">
+        <div class="message__name">
           <p class="message__job">代表取締役社長</p>
           <p class="message__name-text"><img src="<?php echo get_template_directory_uri(); ?>/image/ceo-name.svg" alt="松原充芳"></p>
         </div>

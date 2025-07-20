@@ -2,7 +2,7 @@
   <div class="section__inner inner">
     <div class="jobs__flex">
       <div class="jobs__title-group">
-        <h2 class="section__title">job</h2>
+        <h2 class="section__title section__title--jobs">job</h2>
         <p>
           FREEDGEは、エンジニアをはじめとしたプロフェッショナルな人材を募集中です。<br>
           自由な働き方と成長できる環境で、あなたの力を発揮してください。

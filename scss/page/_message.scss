@@ -7,8 +7,21 @@
 
 .section__title--message {
   text-align: right;
-  margin-right: calc(0 - (75 / 1440 * 100vw ));
+  margin-right: calc(0 - (75 / 1515 * 100vw ));
   margin-bottom: rem(83);
+  font-size: 120px;
+  color: #1061AB;
+  margin-bottom: 32px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: auto;
+  letter-spacing: -0.04em;
+}
+@media screen and (max-width:1515px) {
+  .section__title--message  {
+    margin-right: 0;
+  }
+  
 }
 
 .message__text {
@@ -41,16 +54,6 @@
   align-items: flex-start;
 }
 
-.section__title {
-  font-size: 120px;
-  color: #1061AB;
-  margin-bottom: 32px;
-  font-weight: bold;
-  line-height: 1;
-  text-align: left;
-  letter-spacing: -0.04em;
-}
-
 .message__text {
   font-size: 20px;
   color: #333;
@@ -59,11 +62,12 @@
   text-align: left;
 }
 
-.message__namge {
+.message__name {
   display: flex;
   align-items: flex-end;
   gap: 14px;
   justify-content: flex-end;
+  margin-left: auto;
 }
   .message__job {
     font-size: 16px;
