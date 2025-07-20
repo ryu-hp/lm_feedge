@@ -1,5 +1,5 @@
 <section class="section section--message" id="message">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <div class="message__flex">
       <div class="message__image">
         <img src="<?php echo get_template_directory_uri(); ?>/image/ceo_image.jpg" alt="代表取締役 松原 充芳">

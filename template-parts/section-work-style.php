@@ -1,5 +1,5 @@
 <section class="section section--work-style" id="work-style">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <h2 class="section__title">WORK STYLE</h2>
     <div class="work__contents">
       <div class="work__grid">

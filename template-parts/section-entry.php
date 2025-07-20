@@ -1,5 +1,5 @@
 <section class="section section--entry" id="entry">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <div class="entry__top-contents">
       <div class="entry__top-text">
         <h2 class="section__title">ENTRY</h2>

@@ -5,14 +5,14 @@
 }
 
 .about__text {
-  margin-top: rem(20);
   font-size: clp(16);
-  line-height: 1.8;
+  line-height: 1.5;
+  width: calc(656 / 1440 * 100%);
 }
 .about__flex {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: rem(20);
 }
 .about__sub-title {
@@ -43,5 +43,8 @@
 @include mq(md) {
   .about__flex {
     flex-direction: column;
+  }
+  .about__text {
+    width: 100%;
   }
 }

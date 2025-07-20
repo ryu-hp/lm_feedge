@@ -1,5 +1,5 @@
 <section class="section section--faq" id="faq">
-  <div class="section__inner container section__faq--inner">
+  <div class="section__inner inner section__faq--inner">
     <div class="faq__flex">
       <h2 class="section__title">FAQ</h2>
       <div class="faq__body">

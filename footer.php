@@ -1,5 +1,5 @@
 <footer class="footer">
-  <div class="footer__inner container">
+  <div class="footer__inner inner">
     <p class="footer__text">FREEDGE Inc. All rights reserved.</p>
   </div>
 </footer>

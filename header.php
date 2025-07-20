@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
 
 <header class="header">
-  <div class="header__inner container">
+  <div class="header__inner inner">
     <div class="header__logo">
       <a href="<?php echo esc_url(home_url('/')); ?>" class="header__logo-link">
         <img src="<?php echo get_template_directory_uri(); ?>/image/logo_icon_text.png" alt="FREEDGE">

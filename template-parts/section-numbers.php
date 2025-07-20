@@ -1,5 +1,5 @@
 <section class="section section--numbers" id="numbers">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <div class="section__title-group">
       <p class="section__title-sub">company by the numbers</p>
       <h2 class="section__title">数字で見るFREEDGE</h2>

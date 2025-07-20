@@ -1,5 +1,5 @@
 <section class="section section--jobs" id="jobs">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <div class="jobs__flex">
       <div class="jobs__title-group">
         <h2 class="section__title">job</h2>

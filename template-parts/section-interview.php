@@ -1,5 +1,5 @@
 <section class="section section--interview" id="interview">
-  <div class="section__inner container">
+  <div class="section__inner inner">
     <div class="interview__title-group">
       <h2 class="section__title">INTERVIEW</h2>
       <p class="interview__title-sub">
