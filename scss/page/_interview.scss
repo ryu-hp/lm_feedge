@@ -46,17 +46,22 @@
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw) !important;
+  padding-top: rem(53) !important;
 }
 
 .swiper-slide {
   display: flex;
   justify-content: center;
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.swiper-slide.swiper-slide-active {
+  transform: translateY(rem(-53)) !important;
 }
 
 .interview__item {
   width: 340px;
-  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -93,23 +98,23 @@
 
 .interview__item-text {
   padding: 16px;
-  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: left;
   position: absolute;
   bottom: 20px;
   left: 20px;
+  font-weight: bold;
 }
 
 .interview__name {
   font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #0058B4;
+}
+.interview__name span {
+  font-size: 60px;
 }
 
 .interview__experience {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .interview__comment {
@@ -129,6 +134,7 @@
   margin: 0;
   width: 145px;
   height: 64px;
+  display: flex;
 }
 .interview__swiper-pagination * {
   width: 64px !important;

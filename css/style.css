@@ -545,6 +545,7 @@ select::-ms-expand {
   width: 100vw;
   max-width: 100vw;
   margin-left: calc(50% - 50vw) !important;
+  padding-top: 3.3125rem !important;
 }
 
 .swiper-slide {
@@ -555,11 +556,19 @@ select::-ms-expand {
       -ms-flex-pack: center;
           justify-content: center;
   width: 100%;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.swiper-slide.swiper-slide-active {
+  -webkit-transform: translateY(-3.3125rem) !important;
+          transform: translateY(-3.3125rem) !important;
 }
 
 .interview__item {
   width: 340px;
-  border-radius: 16px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -604,23 +613,24 @@ select::-ms-expand {
 
 .interview__item-text {
   padding: 16px;
-  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   text-align: left;
   position: absolute;
   bottom: 20px;
   left: 20px;
+  font-weight: bold;
 }
 
 .interview__name {
   font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  color: #0058B4;
+}
+
+.interview__name span {
+  font-size: 60px;
 }
 
 .interview__experience {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .interview__comment {
@@ -640,6 +650,9 @@ select::-ms-expand {
   margin: 0;
   width: 145px;
   height: 64px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .interview__swiper-pagination * {
@@ -791,6 +804,11 @@ select::-ms-expand {
   text-align: center;
 }
 
+.section__title--message {
+  text-align: right;
+  margin-right: 5.2083333333vw;
+}
+
 .message__text {
   margin-top: 1.25rem;
   line-height: 1.8;
@@ -821,9 +839,6 @@ select::-ms-expand {
 .message__image img {
   width: 100%;
   max-width: 800px;
-  border-radius: 16px;
-  -webkit-box-shadow: 0 4px 24px rgba(0, 88, 180, 0.1);
-          box-shadow: 0 4px 24px rgba(0, 88, 180, 0.1);
   display: block;
 }
 
@@ -942,7 +957,7 @@ select::-ms-expand {
   min-width: 300px;
 }
 
-.section__title {
+.section__title--jobs {
   font-size: 72px;
   font-weight: bold;
   margin-bottom: 20px;

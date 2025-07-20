@@ -5,9 +5,15 @@
   text-align: center;
 }
 
+.section__title--message {
+  text-align: right;
+  margin-right: calc(0 - (75 / 1440 * 100vw ));
+  margin-bottom: rem(83);
+}
+
 .message__text {
-  margin-top: rem(20);
   line-height: 1.8;
+  margin-bottom: rem(37);
 }
 .message__flex {
   display: flex;
@@ -23,8 +29,6 @@
   img {
     width: 100%;
     max-width: 800px;
-    border-radius: 16px;
-    box-shadow: 0 4px 24px rgba(0, 88, 180, 0.10);
     display: block;
   }
 
@@ -57,13 +61,12 @@
 
 .message__namge {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-top: 16px;
+  align-items: flex-end;
+  gap: 14px;
+  justify-content: flex-end;
 }
   .message__job {
     font-size: 16px;
-    color: #0070C5;
     font-weight: bold;
   }
   .message__name-text img {
