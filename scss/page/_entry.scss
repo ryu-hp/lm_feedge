@@ -6,8 +6,16 @@
   background: linear-gradient(49deg, #1061AB 0%, #2EA2E0 100%);
   padding: rem(100) 0;
   color: #fff;
+  line-height: 1;
 }
 
+.section__title.section__title--entry {
+  font-size: rem(127);
+  font-weight: bold;
+  margin-bottom: rem(43);
+  color: #fff;
+  text-align: left;
+}
 
 .entry__top-contents {
   display: flex;
@@ -15,7 +23,7 @@
   align-items: flex-start;
   justify-content: space-between;
   margin-bottom: rem(80);
-  gap: rem(40);
+  gap: rem(20);
 }
 
 .entry__top-text {
@@ -26,6 +34,36 @@
 .entry__description {
   font-size: rem(16);
   line-height: 1.8;
+}
+.entry__images {
+  max-width: 675px;
+  width: 100%;
+  position: relative;
+}
+.entry__images::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: calc(420 / 675 * 100%);
+}
+.entry__image {
+  position: absolute;
+}
+.entry__image--01 {
+  left: 0;
+  top: calc(50% + 2px);
+  transform: translateY(-50%);
+  width: calc(434 / 675 * 100%);
+}
+.entry__image--02 {
+  top: 0;
+  right: calc(30 / 675 * 100%);
+  width: calc(181 / 675 * 100%);
+}
+.entry__image--03 {
+  right: 0;
+  bottom: 0;
+  width: calc(264 / 675 * 100%);
 }
 
 .entry__bottom-contents {
@@ -79,6 +117,7 @@
   line-height: 1;
   font-size: rem(28);
   font-family: $second-font-family;
+  align-self: flex-start;
 }
 
 .entry__flow-text {

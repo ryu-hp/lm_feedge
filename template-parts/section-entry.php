@@ -2,12 +2,23 @@
   <div class="section__inner inner">
     <div class="entry__top-contents">
       <div class="entry__top-text">
-        <h2 class="section__title">ENTRY</h2>
+        <h2 class="section__title section__title--entry">ENTRY</h2>
         <p class="entry__description">
           当社選考にご参加を希望される方は、エントリーフォームから必要事項の記入と選考書類を添付の上、ご連絡をお願いいたします。<br><br>
           エントリーフォームではカジュアル面談の受付もしております。<br>
           カジュアル面談では、ざっくばらんにお話を聞いてみたい、今後のキャリアや今の自分の市場価値について相談してみたい、などお気軽にお話できます！
         </p>
+      </div>
+      <div class="entry__images">
+        <div class="entry__image entry__image--01">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/entry_image_01.jpg" alt="社員の様子">
+        </div>
+        <div class="entry__image entry__image--02">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/entry_image_02.jpg" alt="社員の様子">
+        </div>
+        <div class="entry__image entry__image--03">
+          <img src="<?php echo get_template_directory_uri(); ?>/image/entry_image_03.jpg" alt="社員の様子">
+        </div>
       </div>
     </div>
     <div class="entry__bottom-contents">

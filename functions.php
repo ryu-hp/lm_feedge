@@ -14,3 +14,9 @@ function lm_feedge_scripts() {
   wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js', array('swiper'), null, true);
 }
 add_action('wp_enqueue_scripts', 'lm_feedge_scripts');
+
+// Contact Form 7 の自動 <p><br> を削除
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+function wpcf7_autop_return_false() {
+    return false;
+}
