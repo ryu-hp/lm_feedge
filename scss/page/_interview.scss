@@ -20,7 +20,7 @@
   margin-bottom: 20px;
 }
 
-.section__title--interview {
+.section__title.section__title--interview {
   color: #fff;
 }
 
@@ -125,20 +125,25 @@
   gap: 16px;
   position: absolute;
   top: 0;
-  right: 0;
-}
-.interview__swiper-pagination * {
-  width: 64px;
+  right: $padding-pc;
+  margin: 0;
+  width: 145px;
   height: 64px;
 }
-.swiper-button-prev-interview::before {
-  background-image: url(../images/interview-prev.svg);
+.interview__swiper-pagination * {
+  width: 64px !important;
+  height: 64px !important;
+  position: static !important;
+  margin: 0 !important; 
 }
-.swiper-button-prev-interview::after {
-  background-image: url(../images/interview-next.svg);
+.interview__swiper-pagination .swiper-button-prev {
+  background-image: url(/wp-content/themes/freedge/image/interview-prev.svg);
+}
+.interview__swiper-pagination .swiper-button-next {
+  background-image: url(/wp-content/themes/freedge/image/interview-next.svg);
 }
 
-.swiper-button-prev-interview::before,
+.swiper-button-prev-interview::after,
 .swiper-button-next-interview::after {
   border-radius: 50%;
   background-size: contain;
@@ -150,6 +155,8 @@
   font-size: 20px;
   transition: background 0.2s;
   border: none;
+  height: 64px;
+  width: 64px;
 }
 
 .swiper-button-prev-interview {
