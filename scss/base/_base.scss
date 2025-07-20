@@ -52,4 +52,14 @@ body {
 a {
     text-decoration: none;
 }
+.text--engineer {
+  display: inline-block;
+  font-weight: bold;
+  background: $gradient-text-engineer;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 //base_laout

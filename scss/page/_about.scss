@@ -2,7 +2,6 @@
 
 .section--about {
   padding: rem(80) 0;
-  text-align: center;
 }
 
 .about__text {
@@ -20,12 +19,26 @@
   font-size: rem(32);
   font-weight: bold;
   margin-bottom: rem(85);
+  line-height: 1.5;
+}
+.section__title--about {
+  max-width: rem(606);
+}
+.about__title--top {
+  width: calc(457 / 606 * 100%);
+  margin-bottom: rem(1);
+}
+.about__title--bottom {
+  width: 100%;
 }
 .abtou__description {
   font-size: rem(22);
   line-height: 2.26;
   font-weight: $bold;
   letter-spacing: -0.07em;
+}
+.about__paragragh:not(:last-child) {
+  margin-bottom: rem(44);
 }
 @include mq(md) {
   .about__flex {
