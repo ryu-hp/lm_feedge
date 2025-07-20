@@ -35,10 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     centeredSlides: true,
     spaceBetween: 32,
     loop: true,
-    pagination: {
-      el: '.interview__swiper-pagination',
-      clickable: true,
-    },
     navigation: {
       nextEl: '.swiper-button-next-interview',
       prevEl: '.swiper-button-prev-interview',
