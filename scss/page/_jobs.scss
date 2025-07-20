@@ -84,3 +84,122 @@
   font-size: 14px;
   line-height: 1.6;
 }
+
+// モーダルのスタイル
+.job-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  z-index: 1000;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  color: $color-black;
+}
+.job-modal.is-open {
+  display: flex;
+}
+.job-modal__inner {
+  overflow: scroll;
+  background: #fff;
+  max-width: 1040px;
+  width: 100%;
+  position: relative;
+  border-radius: rem(4);
+}
+
+.job-modal__wrapper {
+  display: block;
+}
+
+.job-modal__head {
+  padding: rem(40) rem(49);
+  border-bottom: 1px solid #F3F7FF;
+  color: $color-theme;
+  line-height: 1;
+  position: relative;
+  background-color: #F3F7FF;
+}
+.job-modal__close {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(34);
+  width: rem(26);
+  height: rem(26);
+  cursor: pointer;
+}
+.job-modal__close::before,
+.job-modal__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: rem(6);
+  background-color: $color-theme;
+}
+.job-modal__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.job-modal__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.job-modal__content {
+  padding: rem(50) rem(48);
+}
+.job-modal__top-content {
+  margin-bottom: rem(64);
+}
+.job-modal__item:not(:last-child) {
+  margin-bottom: rem(48);
+}
+.job-modal__item-title {
+  font-size: rem(20);
+  font-weight: bold;
+  margin-bottom: rem(18);
+  line-height: 1;
+}
+.job-modal__item-description {
+  font-size: rem(15);
+  line-height: calc(28 / 15);
+}
+.job-modal__table-item {
+  border-top: 1px solid #D0DBEB;
+  padding: rem(38) 0;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.job-modal__table-item:last-child {
+  border-bottom: 1px solid #D0DBEB;
+}
+.job-modal__table-item-head {
+  flex-basis: rem(406);
+  font-weight: $bold;
+  line-height: 1;
+}
+.job-modal__table-item-description {
+  flex: 1;
+  font-size: rem(16);
+  line-height: calc(28 / 16);
+  font-weight: 500;
+}
+.job-modal__button {
+  margin-top: rem(40);
+  text-align: center;
+}
+@include mq(md) {
+  .job-modal__table-item {
+    flex-direction: column;
+  }
+  .job-modal__table-item-head {
+    flex-basis: auto;
+    margin-bottom: rem(24);
+  }
+}

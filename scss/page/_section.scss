@@ -12,4 +12,40 @@
   margin-bottom: rem(80);
   font-weight: normal;
   text-transform: uppercase;
+  line-height: 1;
+}
+
+
+.button {
+  display: inline-block;
+  background: linear-gradient(90deg, #1061AB 0%, #2EA2E0 100%);
+  cursor: pointer;
+  border-radius: rem(38);
+  position: relative;
+  color: #fff;
+  border: none;
+  line-height: 1;
+  font-size: rem(18);
+  width: 280px;
+  padding: rem(29) rem(31);
+  border-radius: rem(38);
+  text-align: left;
+}
+.button::after {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(31);
+  width: rem(19);
+  height: rem(9);
+  z-index: 1;
+  background-image: url(/wp-content/themes/freedge/image/simple-arrow.svg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.button--primary {
+  background: linear-gradient(90deg, #1061AB 0%, #2EA2E0 100%);
 }

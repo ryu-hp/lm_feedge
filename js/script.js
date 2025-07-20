@@ -1,6 +1,34 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // Swiper for about section images
+  // const imageSwiper = new Swiper('.image-swiper', {
+  //   slidesPerView: 'auto',
+  //   loop: true,
+  //   centeredSlides: true,
+  //   spaceBetween: 28,
+  //   allowTouchMove: false,
+  //   freeMode: false,
+  //   freeModeMomentum: false,
+  //   speed: 6000, // スライドアニメーションの速度（ミリ秒）
+  //   autoplay: {
+  //     delay: 1, // 最小の遅延でスムーズな流れを維持
+  //     disableOnInteraction: false,
+  //     pauseOnMouseEnter: false,
+  //   },
+  //   loopAdditionalSlides: 1, // ループ時のスムーズさを向上
+  //   slidesPerGroup: 1,
+  //   // 上下中央寄せ
+  //   on: {
+  //     init: function() {
+  //       document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
+  //         slide.style.display = 'flex';
+  //         slide.style.alignItems = 'center';
+  //         slide.style.justifyContent = 'center';
+  //       });
+  //     }
+  //   }
+  // });
+    // Swiper for about section images
   const imageSwiper = new Swiper('.image-swiper', {
     slidesPerView: 'auto',
     loop: true,
@@ -9,21 +37,39 @@ document.addEventListener('DOMContentLoaded', () => {
     allowTouchMove: false,
     freeMode: false,
     freeModeMomentum: false,
-    speed: 6000, // スライドアニメーションの速度（ミリ秒）
+    speed: 6000,
     autoplay: {
-      delay: 1, // 最小の遅延でスムーズな流れを維持
+      delay: 1,
       disableOnInteraction: false,
       pauseOnMouseEnter: false,
     },
-    loopAdditionalSlides: 1, // ループ時のスムーズさを向上
+    loopAdditionalSlides: 1,
     slidesPerGroup: 1,
-    // 上下中央寄せ
     on: {
       init: function() {
         document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
           slide.style.display = 'flex';
           slide.style.alignItems = 'center';
           slide.style.justifyContent = 'center';
+        });
+        document.querySelectorAll('.image-swiper .swiper-slide img').forEach(img => {
+          img.addEventListener('load', function() {
+            const slide = img.closest('.swiper-slide');
+            if (img.naturalWidth > img.naturalHeight) {
+              slide.classList.add('slide-landscape');
+            } else {
+              slide.classList.add('slide-portrait');
+            }
+          });
+          // fallback: キャッシュ時でも即判定
+          if (img.complete) {
+            const slide = img.closest('.swiper-slide');
+            if (img.naturalWidth > img.naturalHeight) {
+              slide.classList.add('slide-landscape');
+            } else {
+              slide.classList.add('slide-portrait');
+            }
+          }
         });
       }
     }
@@ -77,9 +123,81 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // FAQ accordion (event delegation)
   document.addEventListener('click', function(e) {
-    const item = e.target.closest('.faq__item');
-    if (item) {
-      item.classList.toggle('is-open');
+    console.log('クリックイベント発生:', e.target); // デバッグ用
+    
+    // .faq__questionがクリックされたかチェック
+    const question = e.target.closest('.faq__question');
+    console.log('FAQ question要素:', question); // デバッグ用
+    
+    if (question) {
+      e.preventDefault(); // デフォルト動作を防ぐ
+      e.stopPropagation(); // イベントバブリングを停止
+      
+      console.log('FAQ questionがクリックされました'); // デバッグ用
+      const item = question.closest('.faq__item');
+      console.log('FAQ item要素:', item); // デバッグ用
+      
+      if (item) {
+        console.log('現在のis-openクラス:', item.classList.contains('is-open')); // デバッグ用
+        item.classList.toggle('is-open');
+        console.log('トグル後のis-openクラス:', item.classList.contains('is-open')); // デバッグ用
+      }
     }
   });
+  
+  // Job Modal機能
+  // Job itemのクリックでモーダルを開く
+  document.querySelectorAll('.jobs__item').forEach(jobItem => {
+    jobItem.addEventListener('click', () => {
+      const modalId = jobItem.dataset.modal;
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden'; // スクロールを無効化
+      }
+    });
+  });
+
+  // Job modalの閉じる処理
+  document.querySelectorAll('.job-modal__close').forEach(closeBtn => {
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const modal = closeBtn.closest('.job-modal');
+      if (modal) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = ''; // スクロールを有効化
+      }
+    });
+  });
+
+  // Job modalの背景クリックで閉じる
+  document.querySelectorAll('.job-modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target.classList.contains('job-modal')) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = ''; // スクロールを有効化
+      }
+    });
+  });
+
+  // エントリーボタンクリック時にモーダルを閉じる
+  document.querySelectorAll('.job-modal__button a').forEach(entryBtn => {
+    entryBtn.addEventListener('click', () => {
+      const modal = entryBtn.closest('.job-modal');
+      if (modal) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = ''; // スクロールを有効化
+      }
+    });
+  });
+  
+  // FAQ要素の存在確認（ページ読み込み時）
+  setTimeout(() => {
+    const faqQuestions = document.querySelectorAll('.faq__question');
+    const faqItems = document.querySelectorAll('.faq__item');
+    console.log('FAQ questions の数:', faqQuestions.length); // デバッグ用
+    console.log('FAQ items の数:', faqItems.length); // デバッグ用
+    console.log('FAQ questions:', faqQuestions); // デバッグ用
+    console.log('FAQ items:', faqItems); // デバッグ用
+  }, 1000); // 1秒後に確認
 });

@@ -32,17 +32,6 @@
           </div>
         <?php endif; ?>
       <?php endwhile; wp_reset_postdata(); ?>
-      <div class="faq__item">
-        <div class="faq__question">
-          <p class="faq__icon">Q</p>
-          <h3 class="faq__description">質問内容</h3>
-        </div>
-        <div class="faq__answer">
-          <p class="faq__icon">A</p>
-          <p class="faq__description">回答内容</p>
-        </div>
-      </div>
-
       </div>
       <?php endif; ?>
     </div>

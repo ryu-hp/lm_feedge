@@ -5,6 +5,28 @@
   background-color: $color-bg_gray;
 }
 
+.section__title.section__title--numbers {
+  text-align: left;
+  font-size: rem(36);
+  margin-bottom: 0;
+  letter-spacing: 0.03em;
+  color: $color-black;
+  font-weight: 900;
+}
+.section__title.section__title--numbers span {
+  font-family: $second-font-family;
+}
+
+.section__title-sub.section__title-sub--numbers {
+  font-size: rem(20);
+  color: $color-theme;
+  margin-bottom: rem(17);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  font-family: $second-font-family;
+  line-height: 0.82;
+}
+
 .numbers__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

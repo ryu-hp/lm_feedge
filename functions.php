@@ -8,10 +8,13 @@ function lm_feedge_setup() {
 add_action('after_setup_theme', 'lm_feedge_setup');
 
 function lm_feedge_scripts() {
-  wp_enqueue_style('lm-feedge-style', get_template_directory_uri() . '/css/style.css', array(), null);
+  // 現在の日時をバージョンとして取得（キャッシュクリア用）
+  $version = date('YmdHis');
+  
+  wp_enqueue_style('lm-feedge-style', get_template_directory_uri() . '/css/style.css', array(), $version);
   wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
   wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
-  wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js', array('swiper'), null, true);
+  wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js', array('swiper'), $version, true);
 }
 add_action('wp_enqueue_scripts', 'lm_feedge_scripts');
 

@@ -4,8 +4,6 @@
   <meta charset="<?php bloginfo('charset'); ?>">
   <meta name="viewport" content="width=1440">
   <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
-  <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

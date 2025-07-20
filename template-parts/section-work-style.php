@@ -1,6 +1,6 @@
 <section class="section section--work-style" id="work-style">
   <div class="section__inner inner">
-    <h2 class="section__title">WORK STYLE</h2>
+    <h2 class="section__title section__title--work-style">WORK STYLE</h2>
     <div class="work-style__head-group">
       <p class="work-style__head-en second-font-family">culture</p>
       <p class="work-style__head-ja">社内制度<span>・</span>福利厚生</p>

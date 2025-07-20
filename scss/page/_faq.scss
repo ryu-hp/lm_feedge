@@ -91,7 +91,7 @@
 
 .faq__item.is-open {
   .faq__answer {
-    display: block;
+    display: flex;
   }
   .faq__question::before {
     transform: translateY(-50%) rotate(270deg);
