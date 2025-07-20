@@ -466,6 +466,28 @@ select::-ms-expand {
   margin-bottom: 2.9375rem;
 }
 
+.work__item-text {
+  letter-spacing: 0.03em;
+}
+
+.work__item-head {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.32;
+  margin-bottom: 0.75rem;
+}
+
+.work__item-description {
+  font-size: 0.9375rem;
+  line-height: 1.56;
+  letter-spacing: -0.02em;
+}
+
+.work__item-image {
+  max-width: 6.875rem;
+  width: 100%;
+}
+
 .section--interview {
   width: 100vw;
   background: linear-gradient(49deg, #1061AB 0%, #2EA2E0 100%);

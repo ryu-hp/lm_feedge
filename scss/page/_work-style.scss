@@ -82,3 +82,21 @@
 .work-style__head-group {
   margin-bottom: rem(47);
 }
+.work__item-text {
+  letter-spacing: 0.03em;
+}
+.work__item-head {
+  font-size: rem(24);
+  font-weight: $bold;
+  line-height: 1.32;
+  margin-bottom: rem(12);
+}
+.work__item-description {
+  font-size: rem(15);
+  line-height: 1.56;
+  letter-spacing: -0.02em;
+}
+.work__item-image {
+  max-width: rem(110);
+  width: 100%;
+}
