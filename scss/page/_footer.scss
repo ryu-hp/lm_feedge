@@ -1,8 +1,44 @@
 @use "../global" as *;
 
 .footer {
-  background-color: $color-theme;
-  color: $color-white;
+  color: $color-black;
   text-align: center;
   padding: rem(20) 0;
+}
+.footer__inner.inner {
+  max-width: 1800px;
+  padding: 0 rem(20);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border-top: 1px solid #D0DBEB;
+  padding-top: rem(45);
+  padding-bottom: rem(46);
+}
+.footer__logo {
+  max-width: rem(207);
+  width: 100%;
+}
+.footer__corporate-link {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+.footer__corporate-link--text {
+  text-decoration: underline;
+  font-size: rem(16);
+  font-weight: $bold;
+}
+.footer__corporate-link--icon {
+  display: inline-block;
+  margin-left: rem(4);
+  max-width: rem(20);
+  width: 100%;
 }

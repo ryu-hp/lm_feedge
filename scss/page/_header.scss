@@ -1,41 +1,56 @@
 @use "../global" as *;
 .header {
   color: $color-black;
-  font-size: clp(16);
-  background-color: $color-white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
+  font-size: rem(26);
+  position: fixed;
   top: 0;
   z-index: 10;
+  width: 100%;
 }
 
-.header__inner {
+.inner.header__inner {
+  max-width: 1864px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: rem(20) 0;
+  padding: rem(36) rem(20);
 }
-
+.header__logo {
+  max-width: rem(207);
+  width: 100%;
+}
 .header__logo-link {
   font-family: $second-font-family;
   font-weight: $bold;
-  font-size: clp(24);
-  color: $color-theme;
+  font-size: clp(32);
 }
 
 .nav__list {
   display: flex;
-  gap: rem(20);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.nav__item + .nav__item {
+  margin-left: rem(40);
+}
+.nav__item + .nav__item.nav__link--primary{
+  margin-left: rem(32);
 }
 
 .nav__link {
   display: inline-block;
-  font-size: clp(14);
-  padding: rem(5) rem(10);
+  text-transform: uppercase;
+  font-family: $second-font-family;
+  font-weight: $bold;
+  color: #121212;
 }
 
 .nav__link--primary {
   background-color: $color-theme;
   color: $color-white;
-  border-radius: rem(4);
+  border-radius: rem(2);
+  padding: rem(2) rem(36);
+  line-height: 1;
+  display: inline-block;
 }

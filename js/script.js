@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
   // Swiper for about section images
   const imageSwiper = new Swiper('.image-swiper', {
     slidesPerView: 'auto',
@@ -8,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     allowTouchMove: false,
     freeMode: false,
     freeModeMomentum: false,
-    speed: 4000, // スライドアニメーションの速度（ミリ秒）
+    speed: 6000, // スライドアニメーションの速度（ミリ秒）
     autoplay: {
       delay: 1, // 最小の遅延でスムーズな流れを維持
       disableOnInteraction: false,
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // 上下中央寄せ
     on: {
       init: function() {
-        // スライドの上下中央寄せのみ（幅はCSSで制御するためJSで幅指定は不要）
         document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
           slide.style.display = 'flex';
           slide.style.alignItems = 'center';
@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     on: {
       init: function() {
-        // スライド幅を340pxに固定
         document.querySelectorAll('.interview-swiper .swiper-slide').forEach(slide => {
           slide.style.width = '340px';
         });
@@ -49,13 +48,38 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // FAQ accordion (event delegation)
-  document.addEventListener('click', (e) => {
-    const question = e.target.closest('.faq__question');
-    if (!question) return;
-    const item = question.closest('.faq__item');
-    if (!item) return;
-    item.classList.toggle('is-open');
+  // モーダル開く処理
+  document.querySelectorAll('.swiper-slide').forEach(slide => {
+    slide.addEventListener('click', () => {
+      const modalId = slide.dataset.modal;
+      const modal = document.getElementById(modalId);
+      if (modal) modal.classList.add('is-open');
+    });
   });
 
+  // モーダル閉じる処理
+  document.querySelectorAll('.interview__modal-cancel').forEach(cancel => {
+    cancel.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const modal = cancel.closest('.interview__modal');
+      if (modal) modal.classList.remove('is-open');
+    });
+  });
+
+  // オーバーレイ背景クリックでも閉じる（任意）
+  document.querySelectorAll('.interview__modal').forEach(modal => {
+    modal.addEventListener('click', (e) => {
+      if (e.target.classList.contains('interview__modal')) {
+        modal.classList.remove('is-open');
+      }
+    });
+  });
+
+  // FAQ accordion (event delegation)
+  document.addEventListener('click', function(e) {
+    const item = e.target.closest('.faq__item');
+    if (item) {
+      item.classList.toggle('is-open');
+    }
+  });
 });

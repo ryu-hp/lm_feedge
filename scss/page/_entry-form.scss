@@ -4,6 +4,11 @@
   padding: rem(80) 0;
 }
 
+.section__title.section__title--entry-form {
+  font-size: rem(80);
+  margin-bottom: rem(80);
+  color: $color-theme;
+}
 
 .entry-form__body {
   max-width: 800px;

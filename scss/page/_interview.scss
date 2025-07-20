@@ -13,27 +13,23 @@
   position: relative;
 }
 
-.section__title {
-  color: #fff;
-  font-size: 48px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .section__title.section__title--interview {
   color: #fff;
+  font-size: rem(127);
+  color: #fff;
+  margin-bottom: 0;
 }
 
 .interview__title-group {
-  text-align: center;
   margin-bottom: rem(40);
+  display: flex;
+  gap: 100px;
+  align-items: center;
 }
 
 .interview__title-sub {
   color: #fff;
   font-size: 16px;
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 .interview__body {
@@ -180,6 +176,101 @@
     padding: 24px 8px;
   }
   .interview__body {
+    max-width: 100%;
+  }
+}
+
+// モーダルのスタイル
+.interview__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  z-index: 100;
+  justify-content: center;
+  align-items: center;
+}
+
+.interview__modal.is-open {
+  display: flex;
+}
+
+.interview__modal-contents {
+  max-width: 1200px;
+  margin-right:auto;
+  margin-left:auto;
+  background: #fff;
+  position: relative;
+}
+
+.interview__modal-inner {
+  padding: 64px;
+  display: flex;
+  gap: 56px;
+}
+.interview__modal-image {
+  max-width: 370px;
+  width: 100%;
+}
+.interview__modal-text {
+  max-width: 646px;
+  width: 100%;
+}
+.interview__modal-text-group:not(:last-child) {
+  margin-bottom: rem(40);
+}
+.interview__modal-text-head {
+  font-size: rem(22);
+  font-weight: bold;
+  margin-bottom: rem(20);
+  line-height: 1;
+}
+.interview__modal-text-description {
+  font-size: rem(15);
+  line-height: calc(28 / 15);
+}
+
+.interview__modal-cancel {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.interview__modal-cancel::before,
+.interview__modal-cancel::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: rem(6);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: $color-theme;
+}
+.interview__modal-cancel::before{
+  transform: translate(-50%,-50%) rotate(45deg);
+}
+.interview__modal-cancel::after{
+  transform: translate(-50%,-50%) rotate(-45deg);
+}
+@include mq(md) {
+  .interview__modal-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .interview__modal-image {
+    max-width: 100%;
+    margin-bottom: rem(40);
+  }
+  .interview__modal-text {
     max-width: 100%;
   }
 }
