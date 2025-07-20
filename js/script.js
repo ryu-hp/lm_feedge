@@ -50,11 +50,14 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // FAQ accordion
-  document.querySelectorAll('.faq__question').forEach((question) => {
-    question.addEventListener('click', () => {
-      const item = question.closest('.faq__item');
-      if (item) {
-        item.classList.toggle('is-open');
+  document.addEventListener('DOMContentLoaded', () => {
+    // FAQ accordion (event delegation)
+    document.addEventListener('click', (e) => {
+      const question = e.target.closest('.faq__question');
+      if (question) {
+        e.preventDefault();
+        const item = question.closest('.faq__item');
+        if (item) item.classList.toggle('is-open');
       }
     });
   });

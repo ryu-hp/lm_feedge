@@ -235,6 +235,8 @@ select::-ms-expand {
   text-align: center;
   color: #025CB4;
   margin-bottom: 2.5rem;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .header {
@@ -562,7 +564,7 @@ select::-ms-expand {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.swiper-slide.swiper-slide-active {
+.interview-swiper .swiper-slide.swiper-slide-active {
   -webkit-transform: translateY(-3.3125rem) !important;
           transform: translateY(-3.3125rem) !important;
 }
@@ -806,12 +808,25 @@ select::-ms-expand {
 
 .section__title--message {
   text-align: right;
-  margin-right: 5.2083333333vw;
+  margin-right: calc(0px - 4.9504950495vw);
+  margin-bottom: 5.1875rem;
+  font-size: 120px;
+  color: #1061AB;
+  margin-bottom: 32px;
+  font-weight: bold;
+  line-height: 1;
+  margin-left: auto;
+  letter-spacing: -0.04em;
 }
 
+@media screen and (max-width: 1515px) {
+  .section__title--message {
+    margin-right: 0;
+  }
+}
 .message__text {
-  margin-top: 1.25rem;
   line-height: 1.8;
+  margin-bottom: 2.3125rem;
 }
 
 .message__flex {
@@ -859,16 +874,6 @@ select::-ms-expand {
           align-items: flex-start;
 }
 
-.section__title {
-  font-size: 120px;
-  color: #1061AB;
-  margin-bottom: 32px;
-  font-weight: bold;
-  line-height: 1;
-  text-align: left;
-  letter-spacing: -0.04em;
-}
-
 .message__text {
   font-size: 20px;
   color: #333;
@@ -877,20 +882,22 @@ select::-ms-expand {
   text-align: left;
 }
 
-.message__namge {
+.message__name {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  gap: 16px;
-  margin-top: 16px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  gap: 14px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: auto;
 }
 
 .message__job {
   font-size: 16px;
-  color: #0070C5;
   font-weight: bold;
 }
 
@@ -957,10 +964,12 @@ select::-ms-expand {
   min-width: 300px;
 }
 
-.section__title--jobs {
+.section__title.section__title--jobs {
   font-size: 72px;
   font-weight: bold;
   margin-bottom: 20px;
+  color: #fff;
+  text-align: left;
 }
 
 .jobs__description {
@@ -1030,6 +1039,8 @@ select::-ms-expand {
 
 .jobs__item-arrow img {
   display: block;
+  -webkit-filter: none;
+          filter: none;
 }
 
 .jobs__item-description {

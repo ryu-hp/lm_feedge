@@ -2,22 +2,38 @@
   <div class="section__inner inner section__faq--inner">
     <div class="faq__flex">
       <h2 class="section__title">FAQ</h2>
+      <?php
+      $args = [
+        'post_type' => 'faq',
+        'posts_per_page' => -1,
+        'orderby' => 'date',
+        'order' => 'ASC'
+      ];
+      $faq_query = new WP_Query($args);
+
+      if ($faq_query->have_posts()):
+      ?>
       <div class="faq__body">
-        <!-- FAQ項目は配列化してループも可能 -->
-        <div class="faq__item">
-          <div class="faq__question">
-            <p class="faq__icon">Q</p>
-            <h3 class="faq__description">フルリモートや在宅勤務は可能ですか？</h3>
+      <?php while ($faq_query->have_posts()): $faq_query->the_post(); ?>
+        <?php
+          $question = get_field('question');
+          $answer = get_field('answer');
+        ?>
+        <?php if ($question && $answer): ?>
+          <div class="faq__item">
+            <div class="faq__question">
+              <p class="faq__icon">Q</p>
+              <h3 class="faq__description"><?= esc_html($question); ?></h3>
+            </div>
+            <div class="faq__answer">
+              <p class="faq__icon">A</p>
+              <p class="faq__description"><?= esc_html($answer); ?></p>
+            </div>
           </div>
-          <div class="faq__answer">
-            <p class="faq__icon">A</p>
-            <p class="faq__description">
-              フルリモートやリモートワークが可能な案件もご用意しています。勤務先は本社、または東京・神奈川・埼玉・千葉のプロジェクト先となりますが、プロジェクトによっては在宅勤務やフルリモートでの働き方も選択できます。
-            </p>
-          </div>
-        </div>
-        <!-- ...他のFAQ項目も同様に追加... -->
+        <?php endif; ?>
+      <?php endwhile; wp_reset_postdata(); ?>
       </div>
+      <?php endif; ?>
     </div>
   </div>
 </section>

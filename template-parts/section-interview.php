@@ -47,7 +47,7 @@
                 <?php endif; ?>
               </div>
               <div class="interview__item-text">
-                <p class="interview__name"><?php echo esc_html($item['name_initial']); ?></p>
+                <p class="interview__name"><span><?php echo esc_html($item['name_initial']); ?></span>さん</p>
                 <p class="interview__experience"><?php echo esc_html($item['career']); ?></p>
               </div>
             </div>

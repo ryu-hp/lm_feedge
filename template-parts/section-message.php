@@ -5,7 +5,7 @@
         <img src="<?php echo get_template_directory_uri(); ?>/image/ceo_image.jpg" alt="代表取締役 松原 充芳">
       </div>
       <div class="message__text-group">
-        <h2 class="section__title">MESSAGE</h2>
+        <h2 class="section__title section__title--message">MESSAGE</h2>
         <p class="message__text">
           当社は「関わる人すべてにとって自由の架け橋となる」ことをミッションに設立しました。<br>
           これはFREEDGEを通して、従業員やそのご家族、お客様がより自由になって欲しいという想いで掲げています。<br>

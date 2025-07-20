@@ -56,7 +56,7 @@
   transition: transform 0.3s ease;
 }
 
-.swiper-slide.swiper-slide-active {
+.interview-swiper .swiper-slide.swiper-slide-active {
   transform: translateY(rem(-53)) !important;
 }
 
