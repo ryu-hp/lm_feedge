@@ -61,5 +61,14 @@ a {
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
+.title-eng {
+  font-size: rem(20);
+  color: $color-theme;
+  font-family: $second-font-family;
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+  margin-bottom: rem(20);
+  text-transform: uppercase;
+}
 
 //base_laout

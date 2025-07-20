@@ -71,6 +71,16 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.title-eng {
+  font-size: 1.25rem;
+  color: #025CB4;
+  font-family: "Bebas Neue", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 0.82;
+  margin-bottom: 1.25rem;
+  text-transform: uppercase;
+}
+
 *,
 *::before,
 *::after {
@@ -412,6 +422,7 @@ select::-ms-expand {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
+
 .work__item-number {
   font-size: 24px;
   font-weight: bold;
@@ -422,24 +433,24 @@ select::-ms-expand {
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+
 .work__item-text {
   margin-bottom: 10px;
 }
+
 .work__item-text-head {
   font-weight: bold;
   margin-bottom: 5px;
   font-size: 1.5rem;
 }
+
 .work__item-text-description {
   font-size: 0.9375rem;
 }
+
 .work__item-image {
   margin-top: auto;
   margin-left: auto;
-}
-.work__item-image img {
-  width: 50px;
-  height: 50px;
 }
 
 .work-style__head-en {
@@ -449,6 +460,7 @@ select::-ms-expand {
   letter-spacing: -0.02em;
   line-height: 0.82;
   margin-bottom: 1.25rem;
+  text-transform: uppercase;
 }
 
 .work-style__head-ja {
