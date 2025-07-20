@@ -1,7 +1,7 @@
 <section class="section section--faq" id="faq">
   <div class="section__inner inner section__faq--inner">
     <div class="faq__flex">
-      <h2 class="section__title">FAQ</h2>
+      <h2 class="section__title section__title--faq">FAQ</h2>
       <?php
       $args = [
         'post_type' => 'faq',

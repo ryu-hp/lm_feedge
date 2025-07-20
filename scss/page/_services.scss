@@ -6,6 +6,20 @@
   text-align: center;
 }
 
-.services__text {
-  margin-top: rem(20);
+.section__title.section__title--services {
+  color: $color-theme;
+  margin-bottom: rem(11);
+  font-size: rem(80);
 }
+.services__title-sub.services__title-sub--services {
+  font-size: rem(22);
+}
+.services__title-group {
+  margin-bottom: rem(50);
+}
+.services__pdf {
+  max-width: rem(960);
+  margin-right:auto;
+  margin-left:auto;
+}
+

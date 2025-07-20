@@ -4,18 +4,18 @@
   padding: rem(80) 0;
 }
 
-.section__faq--inner {
-  display: block;
+.section__inner.section__faq--inner {
+  max-width: calc(1200px + ($padding-pc * 2));
 }
-.faq__flex {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: rem(20);
+
+.section__title.section__title--faq {
+  color: $color-theme;
+  margin-bottom: rem(80);
+  font-size: rem(80);
+  text-align: center;
 }
 
 .faq__body {
-  max-width: 720px;
   padding: rem(20);
   width: 100%;
 }

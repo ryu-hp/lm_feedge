@@ -1052,25 +1052,18 @@ select::-ms-expand {
   padding: 5rem 0;
 }
 
-.section__faq--inner {
-  display: block;
+.section__inner.section__faq--inner {
+  max-width: calc(1200px + 3.125rem);
 }
 
-.faq__flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1.25rem;
+.section__title.section__title--faq {
+  color: #025CB4;
+  margin-bottom: 5rem;
+  font-size: 5rem;
+  text-align: center;
 }
 
 .faq__body {
-  max-width: 720px;
   padding: 1.25rem;
   width: 100%;
 }
@@ -1172,8 +1165,24 @@ select::-ms-expand {
   text-align: center;
 }
 
-.services__text {
-  margin-top: 1.25rem;
+.section__title.section__title--services {
+  color: #025CB4;
+  margin-bottom: 0.6875rem;
+  font-size: 5rem;
+}
+
+.services__title-sub.services__title-sub--services {
+  font-size: 1.375rem;
+}
+
+.services__title-group {
+  margin-bottom: 3.125rem;
+}
+
+.services__pdf {
+  max-width: 60rem;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .section--entry {
@@ -1240,8 +1249,8 @@ select::-ms-expand {
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(0.625rem);
           backdrop-filter: blur(0.625rem);
-  border-radius: 0.75rem;
-  padding: 1.5rem;
+  border-radius: 0.25rem;
+  padding: 0.625rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1251,6 +1260,19 @@ select::-ms-expand {
           flex-direction: column;
   color: #fff;
   min-width: 13.75rem;
+  position: relative;
+}
+
+.entry__flow-item:not(:last-child):after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translate(10%, -50%);
+          transform: translate(10%, -50%);
+  right: 0;
+  width: 18px;
+  height: 33px;
+  background: #ffffff;
 }
 
 .entry__flow-number {
@@ -1259,6 +1281,10 @@ select::-ms-expand {
   color: #ffffff;
   margin-bottom: 0.75rem;
   text-transform: uppercase;
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+          clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .entry__flow-text {

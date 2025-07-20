@@ -50,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // FAQ accordion (event delegation)
-  document.querySelectorAll('.faq__item').forEach((item) => {
-    const question = item.querySelector('.faq__question');
-    if (question) {
-      question.addEventListener('click', () => {
-        item.classList.toggle('is-open');
-      });
-    }
+  document.addEventListener('click', (e) => {
+    const question = e.target.closest('.faq__question');
+    if (!question) return;
+    const item = question.closest('.faq__item');
+    if (!item) return;
+    item.classList.toggle('is-open');
   });
+
 });
