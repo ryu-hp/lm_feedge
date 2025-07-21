@@ -24,3 +24,15 @@
   display: block;
 }
 
+@include mq(md) {
+  .section__title.section__title--services {
+    font-size: rem(48);
+    margin-bottom: rem(16);
+  }
+  .services__title-sub.services__title-sub--services {
+    font-size: rem(20);
+  }
+  .services__title-group {
+    margin-bottom: rem(32);
+  }
+}

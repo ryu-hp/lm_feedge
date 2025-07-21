@@ -112,11 +112,19 @@
     flex-direction: column;
     align-items: center;
   }
+  .message__name {
+    width: 100%;
+  }
   .message__job {
     font-size: rem(16);
   }
   .message__name-text {
     max-width: rem(160);
+    width: 100%;
+  }
+  .message__name-text img {
+    height: auto;
+    width: 100%;
   }
 
 }

@@ -133,8 +133,9 @@
 }
 
 @media (max-width: 768px) {
-  .section__title {
+  .section__title.section__title--entry {
     font-size: rem(48);
+    margin-bottom: rem(32);
   }
   .entry__flow {
     flex-direction: column;
@@ -154,4 +155,14 @@
     background: $color-white;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
   } 
+  .entry__flow-number {
+    font-size: rem(24);
+    padding: rem(8) rem(16);
+  }
+  .entry__flow-text {
+    font-size: rem(24);
+  }
+  .entry__flow-description {
+    font-size: rem(16);
+  }
 }

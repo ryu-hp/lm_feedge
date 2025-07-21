@@ -188,7 +188,6 @@ input[type="file"] {
   height: rem(14);
   border: solid $color-white;
   border-width: 0 3px 3px 0;
-  border-radius: calc(50% - 2px);
   box-sizing: border-box;
   top: 50%;
   left: rem(11);
@@ -238,8 +237,26 @@ input[type="file"] {
 }
 
 @include mq(md) {
+  .section__title.section__title--entry-form {
+    font-size: rem(48);
+    margin-bottom: rem(32);
+  }
+  .form-item__input--radio .wpcf7-list-item-label {
+    font-size: rem(16);
+    padding-left: rem(32);
+  }
+  .form-item__input--radio input:checked + .wpcf7-list-item-label::after {
+    width: rem(12);
+    height: rem(12);
+    left: rem(6);
+  }
+  .form-item__input--radio .wpcf7-list-item-label::before {
+    width: rem(24);
+    height: rem(24);
+  }
   .form-item {
     flex-direction: column;
+    margin-bottom: rem(32);
   } 
   .form-item__label {
     flex-basis: auto;
@@ -247,5 +264,14 @@ input[type="file"] {
   }
   .form-item__inputArea {
     width: 100%;  
+  }
+  .form-item__input--text, .form-item__input--textArea {
+    width: 100%;
+    padding: rem(16) rem(20);
+    font-size: rem(16);
+  }
+  .form-item__label--file-box {
+    font-size: rem(16);
+    padding: rem(12) rem(24);
   }
 }
