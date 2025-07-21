@@ -30,7 +30,7 @@
 // 縦長スライド用
 .slide-portrait {
   width: rem(320) !important;
-  max-width: 90vw;
+  max-width: 70vw;
 }
 .slide-portrait img {
   aspect-ratio: 424 / 565;
@@ -40,7 +40,7 @@
 // 横長スライド用
 .slide-landscape {
   width: rem(480) !important;
-  max-width: 95vw;
+  max-width: 75vw;
 }
 .slide-landscape img {
   aspect-ratio: 565 / 424;
@@ -60,9 +60,3 @@
   transition-timing-function: linear;
 }
 
-// .image-swiper .swiper-slide:nth-child(odd) {
-//   width: 565px !important;
-// }
-// .image-swiper .swiper-slide:nth-child(even) {
-//   width: 424px !important;
-// }

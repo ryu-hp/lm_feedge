@@ -5,7 +5,7 @@ html {
     scroll-behavior: smooth;
     font-size: 16px;
     @include mq(md) {
-        font-size: vw(767px, 16px);
+        font-size: vw(375px, 16px);
     }
 }
 img {
@@ -37,7 +37,17 @@ body {
 
 // index.html では container クラスを使用しているため
 .container {
-    @extend .inner;
+    width: 100%;
+    max-width: calc($inner + ($padding-pc * 2));
+    padding-right: $padding-pc;
+    padding-left: $padding-pc;
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    @include mq(md) {
+        padding-right: $padding-sp;
+        padding-left: $padding-sp;
+    }
 }
 
 .only-sp {

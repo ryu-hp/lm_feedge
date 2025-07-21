@@ -60,7 +60,7 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: rem(40);
+  width: rem(32);
   height: rem(18);
   background: none;
   border: none;
@@ -199,4 +199,10 @@
 // body がドロワー開いている時のスクロール制御
 body.drawer-open {
   overflow: hidden;
+}
+
+@include mq(md) {
+  .header__logo {
+    max-width: rem(100);
+  }
 }

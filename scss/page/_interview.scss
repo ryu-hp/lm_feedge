@@ -93,7 +93,6 @@
 }
 
 .interview__item-text {
-  padding: rem(16);
   color: #fff;
   text-align: left;
   position: absolute;
@@ -265,10 +264,23 @@
   .interview__title-group {
     flex-direction: column;
     align-items: flex-start;
+    gap: rem(24);
   }
   .section__title.section__title--interview {
     text-align: left;
+    font-size: rem(32);
   }
+  .interview__name {
+    font-size: rem(16);
+  }
+  .interview__name span {
+    font-size: rem(32);
+  }
+
+  .interview__experience {
+    font-size: rem(16);
+  }
+
   .interview__modal {
     align-items: flex-start;
   }

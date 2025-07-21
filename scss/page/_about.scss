@@ -21,8 +21,9 @@
   margin-bottom: rem(85);
   line-height: 1.5;
 }
-.section__title--about {
+.section__title.section__title--about {
   max-width: rem(606);
+  margin-bottom: 0;
 }
 .about__title--top {
   width: calc(457 / 606 * 100%);
@@ -41,10 +42,26 @@
   margin-bottom: rem(44);
 }
 @include mq(md) {
+  .section--about {
+    padding: rem(52) 0;
+  }
+  .section__title--about {
+    max-width: rem(160);
+    margin-right: auto;
+
+  }
+  .about__sub-title {
+    font-size: rem(24);
+    margin-bottom: rem(32);
+  }
   .about__flex {
     flex-direction: column;
   }
   .about__text {
     width: 100%;
+    font-size: rem(16);
+  }
+  .about__paragragh:not(:last-child) {
+    margin-bottom: rem(16);
   }
 }

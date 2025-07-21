@@ -35,12 +35,13 @@
   .kv__text-group {
     left: 50%;
     transform: translateX(-50%);
-    bottom: rem(60);
+    bottom: 0;
+    width: 80%;
   }
   .kv__text {
     height: auto;
   }
   .kv__text--sub {
-    font-size: rem(24);
+    font-size: rem(16);
   }
 }

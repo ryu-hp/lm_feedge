@@ -84,3 +84,17 @@
     margin-top: 0;
   }
 }
+@include mq(md) {
+  .section__title.section__title--numbers {
+    font-size: rem(32);
+  }
+  .numbers__item .numbers__label {
+    font-size: rem(16);
+  }
+  .numbers__value {
+    font-size: rem(24);
+  }
+  .numbers__item .numbers__value span {
+    font-size: rem(60);
+  }
+}

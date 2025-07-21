@@ -103,20 +103,43 @@
 }
 
 @include mq(md) {
-  .work__grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .work__item-number {
-    font-size: rem(32);
-  }
-
-  .work__item-text-head {
-    font-size: rem(32);
-  }
-
-  .work__item-text-description {
+  .work-style__head-ja {
     font-size: rem(20);
   }
+  .work-style__head-en {
+    font-size: rem(16);
+    margin-bottom: rem(16);
+  }
+  .work__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .work__item {
+    width: 100%;
+    height: auto;
+    padding: rem(20);
+  }
+  
+  .work__item-number {
+    font-size: rem(20);
+  }
+  
+  .work__item-text-head {
+    font-size: rem(20);
+  }
+  
+  .work__item-description {
+    font-size: rem(16);
+  }
+  .work__item-image {
+    max-width: rem(48);
+    margin-top: rem(16);
+  }
+}
+@media screen and (max-width: 400px) {
+  .work__grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
 }

@@ -195,6 +195,9 @@
   text-align: center;
 }
 @include mq(md) {
+  .jobs__title-sub {
+    font-size: rem(16);
+  }
   .jobs__flex {
     flex-direction: column;
     gap: rem(32);
@@ -205,5 +208,40 @@
   .job-modal__table-item-head {
     flex-basis: auto;
     margin-bottom: rem(24);
+  }
+  .jobs__item-head-main {
+    font-size: rem(20);
+  }
+  .jobs__item-description {
+    font-size: rem(16);
+  }
+  .job-modal__head {
+    padding: rem(20) rem(20);
+  }
+  .job-modal__title {
+    font-size: rem(24);
+  }
+  .job-modal__content {
+    padding: rem(32) rem(20);
+  }
+  .job-modal__item:not(:last-child) {
+    margin-bottom: rem(32);
+  }
+  .job-modal__item-title {
+    font-size: rem(20);
+    margin-bottom: rem(16);
+  }
+  .job-modal__item-description {
+    font-size: rem(16);
+  }
+  .job-modal__table-item {
+    padding: rem(24) 0;
+  }
+  .job-modal__table-item-head {
+    font-size: rem(16);
+    margin-bottom: rem(24);
+  }
+  .job-modal__table-item-description {
+    font-size: rem(16);
   }
 }

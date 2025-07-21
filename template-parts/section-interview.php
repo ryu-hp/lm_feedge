@@ -7,8 +7,8 @@
         日々の業務内容やプライベートの過ごし方など、メンバーの日常をぜひご覧ください。
       </p>
     </div>
-    <div class="interview__body js-fadeInUp">
-      <div id="interview-swiper" class="swiper interview-swiper">
+    <div class="interview__body">
+      <div id="interview-swiper" class="swiper interview-swiper js-fadeInUp">
         <div class="swiper-wrapper">
           <?php
           $args = [
