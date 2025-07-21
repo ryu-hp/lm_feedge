@@ -55,11 +55,13 @@
 }
 
 .message__text {
-  font-size: 20px;
-  color: #333;
-  line-height: 2;
-  margin-bottom: 32px;
+  font-size: rem(16);
+  font-family: $base-font-family;
+  color: $color-black;
+  line-height: calc(36 / 16);
+  margin-bottom: rem(37);
   text-align: left;
+
 }
 
 .message__name {
@@ -99,12 +101,15 @@
     text-align: left;
   }
 }
-
-@media (max-width: 600px) {
+@include mq(md) {
   .section--message .section__title {
     font-size: 36px;
   }
   .section--message .message__text {
     font-size: 16px;
+  }
+  .message__flex {
+    flex-direction: column;
+    align-items: center;
   }
 }

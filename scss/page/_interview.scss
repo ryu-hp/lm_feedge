@@ -57,7 +57,7 @@
 }
 
 .interview__item {
-  width: 340px;
+  width: rem(340);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -93,24 +93,24 @@
 }
 
 .interview__item-text {
-  padding: 16px;
+  padding: rem(16);
   color: #fff;
   text-align: left;
   position: absolute;
-  bottom: 20px;
-  left: 20px;
+  bottom: rem(20);
+  left: rem(20);
   font-weight: bold;
 }
 
 .interview__name {
-  font-size: 20px;
+  font-size: rem(20);
 }
 .interview__name span {
-  font-size: 60px;
+  font-size: rem(60);
 }
 
 .interview__experience {
-  font-size: 16px;
+  font-size: rem(16);
 }
 
 .interview__comment {
@@ -210,9 +210,9 @@
 }
 
 .interview__modal-inner {
-  padding: 64px;
+  padding: rem(64);
   display: flex;
-  gap: 56px;
+  gap: rem(56);
 }
 .interview__modal-image {
   max-width: 370px;
@@ -262,9 +262,19 @@
   transform: translate(-50%,-50%) rotate(-45deg);
 }
 @include mq(md) {
+  .interview__title-group {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .section__title.section__title--interview {
+    text-align: left;
+  }
+  .interview__modal {
+    align-items: flex-start;
+  }
   .interview__modal-inner {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   .interview__modal-image {
     max-width: 100%;
@@ -274,3 +284,4 @@
     max-width: 100%;
   }
 }
+

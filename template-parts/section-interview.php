@@ -1,13 +1,13 @@
 <section class="section section--interview" id="interview">
   <div class="section__inner inner">
     <div class="interview__title-group">
-      <h2 class="section__title section__title--interview">INTERVIEW</h2>
-      <p class="interview__title-sub">
+      <h2 class="section__title section__title--interview js-fadeInUp">INTERVIEW</h2>
+      <p class="interview__title-sub js-fadeInUp">
         FREEDGEで働くメンバーの「リアルな声」をご紹介します。<br>
         日々の業務内容やプライベートの過ごし方など、メンバーの日常をぜひご覧ください。
       </p>
     </div>
-    <div class="interview__body">
+    <div class="interview__body js-fadeInUp">
       <div id="interview-swiper" class="swiper interview-swiper">
         <div class="swiper-wrapper">
           <?php

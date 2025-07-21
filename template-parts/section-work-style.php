@@ -1,9 +1,9 @@
 <section class="section section--work-style" id="work-style">
   <div class="section__inner inner">
-    <h2 class="section__title section__title--work-style">WORK STYLE</h2>
+    <h2 class="section__title section__title--work-style js-fadeInUp">WORK STYLE</h2>
     <div class="work-style__head-group">
-      <p class="work-style__head-en second-font-family">culture</p>
-      <p class="work-style__head-ja">社内制度<span>・</span>福利厚生</p>
+      <p class="work-style__head-en second-font-family js-fadeInUp">culture</p>
+      <p class="work-style__head-ja js-fadeInUp">社内制度<span>・</span>福利厚生</p>
     </div>
     <div class="work__contents">
       <div class="work__grid">
@@ -24,7 +24,7 @@
             $work_style_image_id = get_post_meta(get_the_ID(), 'work_style_image', true);
             $work_style_image_url = $work_style_image_id ? wp_get_attachment_image_url($work_style_image_id, 'full') : '';
         ?>
-        <div class="work__item">
+        <div class="work__item js-fadeInUp">
           <p class="work__item-number"><?php printf('%02d', $counter); ?></p>
           <div class="work__item-text">
             <p class="work__item-head"><?php echo esc_html($work_style_head); ?></p>

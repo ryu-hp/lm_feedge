@@ -1,7 +1,7 @@
 <section class="section section--faq" id="faq">
   <div class="section__inner inner section__faq--inner">
     <div class="faq__flex">
-      <h2 class="section__title section__title--faq">FAQ</h2>
+      <h2 class="section__title section__title--faq js-fadeInUp">FAQ</h2>
       <?php
       $args = [
         'post_type' => 'faq',
@@ -20,7 +20,7 @@
           $answer = get_field('answer');
         ?>
         <?php if ($question && $answer): ?>
-          <div class="faq__item">
+          <div class="faq__item js-fadeInUp">
             <div class="faq__question">
               <p class="faq__icon">Q</p>
               <h3 class="faq__description"><?= esc_html($question); ?></h3>

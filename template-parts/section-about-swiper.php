@@ -1,4 +1,4 @@
-<div class="slide-image">
+<div class="slide-image js-fadeInUp">
   <div id="image-swiper" class="swiper image-swiper">
     <div class="swiper-wrapper">
       <?php

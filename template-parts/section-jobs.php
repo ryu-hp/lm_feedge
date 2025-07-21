@@ -2,8 +2,8 @@
   <div class="section__inner inner">
     <div class="jobs__flex">
       <div class="jobs__title-group">
-        <h2 class="section__title section__title--jobs">job</h2>
-        <p>
+        <h2 class="section__title section__title--jobs js-fadeInUp">jobs</h2>
+        <p class="jobs__title-sub js-fadeInUp">
           FREEDGEは、エンジニアをはじめとしたプロフェッショナルな人材を募集中です。<br>
           自由な働き方と成長できる環境で、あなたの力を発揮してください。
         </p>
@@ -39,7 +39,7 @@
             $work_location = get_post_meta(get_the_ID(), 'work_location', true);
             $access = get_post_meta(get_the_ID(), 'access', true);
         ?>
-          <div id="job-<?php echo sprintf('%02d', $job_counter); ?>" class="jobs__item" data-modal="job-modal-<?php echo sprintf('%02d', $job_counter); ?>">
+          <div id="job-<?php echo sprintf('%02d', $job_counter); ?>" class="jobs__item js-fadeInUp" data-modal="job-modal-<?php echo sprintf('%02d', $job_counter); ?>">
             <div class="jobs__item-head">
               <h3 class="jobs__item-head-main">
                 <?php echo esc_html($job); ?>

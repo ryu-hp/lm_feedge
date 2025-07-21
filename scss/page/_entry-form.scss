@@ -236,3 +236,16 @@ input[type="file"] {
   transform: translateY(-50%);
   left: 101%;
 }
+
+@include mq(md) {
+  .form-item {
+    flex-direction: column;
+  } 
+  .form-item__label {
+    flex-basis: auto;
+    text-align: left;
+  }
+  .form-item__inputArea {
+    width: 100%;  
+  }
+}

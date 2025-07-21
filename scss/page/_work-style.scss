@@ -39,7 +39,7 @@
   margin-bottom: 10px;
   font-family: $second-font-family;
   color: transparent;
-  -webkit-text-stroke: 1px #fff;
+  -webkit-text-stroke: 0.1px #fff;
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
@@ -100,4 +100,23 @@
 .work__item-image {
   max-width: rem(110);
   width: 100%;
+}
+
+@include mq(md) {
+  .work__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work__item-number {
+    font-size: rem(32);
+  }
+
+  .work__item-text-head {
+    font-size: rem(32);
+  }
+
+  .work__item-text-description {
+    font-size: rem(20);
+  }
 }

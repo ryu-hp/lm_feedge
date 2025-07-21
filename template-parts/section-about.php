@@ -1,7 +1,7 @@
 <section class="section section--about" id="about">
   <div class="section__inner inner">
     <div class="about__flex">
-      <h2 class="section__title section__title--about">
+      <h2 class="section__title section__title--about js-fadeInUp">
         <div class="about__title about__title--top">
           <img src="<?php echo get_template_directory_uri(); ?>/image/about_title_about.svg" alt="about">
         </div>
@@ -10,12 +10,12 @@
         </div>
       </h2>
       <div class="about__text">
-        <h3 class="about__sub-title">
+        <h3 class="about__sub-title js-fadeInUp">
           全従業員、<br>
           <span class="text--engineer">エンジニア</span>による<br>
           <span class="text--engineer">エンジニア</span>のための会社。
         </h3>
-        <div class="about__description">
+        <div class="about__description js-fadeInUp">
           <p class="about__paragragh">皆さんにとっての「自由」とは何でしょうか？</p>
           <p class="about__paragragh">
             当社では自分の人生を自分で選択できることだと考えています。<br>

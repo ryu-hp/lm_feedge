@@ -170,6 +170,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // エントリーボタンクリック時にモーダルを閉じる
+  document.querySelectorAll('.job-modal .button--primary').forEach(entryBtn => {
+    entryBtn.addEventListener('click', () => {
+      const modal = entryBtn.closest('.job-modal');
+      if (modal) {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = ''; // スクロールを有効化
+      }
+    });
+  });
+
   // Job modalの背景クリックで閉じる
   document.querySelectorAll('.job-modal').forEach(modal => {
     modal.addEventListener('click', (e) => {
@@ -177,6 +188,39 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロールを有効化
       }
+    });
+  });
+
+  // ドロワーメニュー機能
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const drawer = document.getElementById('drawer');
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  const drawerLinks = document.querySelectorAll('.drawer__link');
+
+  // ハンバーガーメニューボタンクリック
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener('click', () => {
+      hamburgerBtn.classList.toggle('is-active');
+      drawer.classList.toggle('is-open');
+      document.body.classList.toggle('drawer-open');
+    });
+  }
+
+  // オーバーレイクリックでドロワーを閉じる
+  if (drawerOverlay) {
+    drawerOverlay.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('is-active');
+      drawer.classList.remove('is-open');
+      document.body.classList.remove('drawer-open');
+    });
+  }
+
+  // ドロワーメニューのリンククリックでドロワーを閉じる
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      hamburgerBtn.classList.remove('is-active');
+      drawer.classList.remove('is-open');
+      document.body.classList.remove('drawer-open');
     });
   });
 
@@ -200,4 +244,23 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('FAQ questions:', faqQuestions); // デバッグ用
     console.log('FAQ items:', faqItems); // デバッグ用
   }, 1000); // 1秒後に確認
+
+  // スクロールアニメーション機能
+  function fadeAnimation() {
+    document.querySelectorAll('.js-fadeInUp').forEach(function(element) {
+      const elemPos = element.getBoundingClientRect().top + window.pageYOffset;
+      const windowHeight = window.innerHeight;
+      const scrollPos = window.pageYOffset + windowHeight - 100;
+
+      if (scrollPos > elemPos) {
+        element.classList.add('visible');
+      }
+    });
+  }
+
+  // 初期実行
+  fadeAnimation();
+
+  // スクロール時に実行
+  window.addEventListener('scroll', fadeAnimation);
 });

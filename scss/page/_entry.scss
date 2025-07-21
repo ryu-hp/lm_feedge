@@ -3,7 +3,7 @@
 .section--entry {
   max-width: 1880px;
   margin: 0 auto;
-  background: linear-gradient(49deg, #1061AB 0%, #2EA2E0 100%);
+  background: linear-gradient(127deg, #1061AB 0%, #2EA2E0 100%);
   padding: rem(100) 0;
   color: #fff;
   line-height: 1;
@@ -142,4 +142,16 @@
   .entry__flow-item {
     flex: 1 1 100%;
   }
+  .entry__flow-item:not(:last-child):after {
+  content: "";
+    top: auto;
+    bottom: 0;
+    transform: translate(-50%,50%);
+    right: auto;
+    left: 50%;
+    width: 33px;
+    height: 18px;
+    background: $color-white;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  } 
 }
