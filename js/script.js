@@ -53,10 +53,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   const interviewSwiper = new Swiper('.interview-swiper', {
     slidesPerView: 'auto',
-    centeredSlides: true,
+    centeredSlides: window.innerWidth <= 767, // スマホでは中央、PCでは左寄り
     spaceBetween: 32,
     loop: true,
     initialSlide: initialSlideIndex, // PCでは1（左から2番目）、スマホでは中央
+    slidesOffsetBefore: window.innerWidth > 768 ? 170 : 0, // PCでは170px右にずらす
     navigation: {
       nextEl: '.swiper-button-next-interview',
       prevEl: '.swiper-button-prev-interview',
@@ -240,12 +241,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     
-    // リサイズ後にスライドを調整
-    setTimeout(() => {
-      if (interviewSwiper && !interviewSwiper.destroyed) {
+    // Swiperの設定を更新
+    if (interviewSwiper && !interviewSwiper.destroyed) {
+      // centeredSlidesの設定を更新
+      interviewSwiper.params.centeredSlides = window.innerWidth <= 767;
+      interviewSwiper.params.slidesOffsetBefore = window.innerWidth > 768 ? 170 : 0;
+      
+      // Swiperを更新
+      interviewSwiper.update();
+      
+      // リサイズ後にスライドを調整
+      setTimeout(() => {
         interviewSwiper.slideTo(targetSlide, 300);
-      }
-    }, 100);
+      }, 100);
+    }
   });
 
   // スクロールアニメーション機能
@@ -261,9 +270,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ページトップボタンの表示/非表示制御
+  function togglePageTopButton() {
+    const pageTopButton = document.getElementById('page-top');
+    if (window.pageYOffset > 300) {
+      pageTopButton.classList.add('visible');
+    } else {
+      pageTopButton.classList.remove('visible');
+    }
+  }
+
+  // ページトップボタンのクリックイベント
+  const pageTopButton = document.getElementById('page-top');
+  if (pageTopButton) {
+    pageTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+
   // 初期実行
   fadeAnimation();
+  togglePageTopButton();
 
   // スクロール時に実行
-  window.addEventListener('scroll', fadeAnimation);
+  window.addEventListener('scroll', () => {
+    fadeAnimation();
+    togglePageTopButton();
+  });
 });

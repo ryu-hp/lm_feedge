@@ -2,10 +2,26 @@
 
 .section--about {
   padding: rem(80) 0;
+  position: relative;
+  z-index: 1;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-130 / 1920 * 100vw);
+    right: calc(-30 / 1920 * 100vw);
+    width: calc(1802 / 1920 * 100vw);
+    height: auto;
+    background-image: url(/wp-content/themes/freedge/image/about_bg_image.webp);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    aspect-ratio: 1802 / 784.84; // 画像の実際のアスペクト比に合わせて調整してください
+  }
 }
 
 .about__text {
-  font-size: clp(16);
+  font-size: rem(18);
   line-height: 1.5;
   width: calc(656 / 1440 * 100%);
 }
@@ -16,7 +32,7 @@
   gap: rem(20);
 }
 .about__sub-title {
-  font-size: rem(32);
+  font-size: rem(36);
   font-weight: bold;
   margin-bottom: rem(85);
   line-height: 1.5;
@@ -33,7 +49,7 @@
   width: 100%;
 }
 .abtou__description {
-  font-size: rem(22);
+  font-size: rem(24);
   line-height: 2.26;
   font-weight: $bold;
   letter-spacing: -0.07em;
@@ -45,8 +61,8 @@
   .section--about {
     padding: rem(52) 0;
   }
-  .section__title--about {
-    max-width: rem(160);
+  .section__title.section__title--about {
+    max-width: rem(240);
     margin-right: auto;
 
   }

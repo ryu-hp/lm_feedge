@@ -121,12 +121,14 @@
   .faq__question {
     padding-right: rem(16);
     padding-bottom: rem(16);
+    padding-left: 0;
+
   }
   .faq__question::after {
     right: rem(2);
   }
   .faq__question::before {
-    right: rem(8);
+    right: rem(12);
   }
   .faq__description {
     font-size: rem(16);

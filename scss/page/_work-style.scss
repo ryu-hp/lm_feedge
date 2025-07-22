@@ -103,6 +103,9 @@
 }
 
 @include mq(md) {
+  .section--work-style {
+    padding: rem(124) 0;
+  }
   .work-style__head-ja {
     font-size: rem(20);
   }

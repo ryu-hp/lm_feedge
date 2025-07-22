@@ -203,6 +203,6 @@ body.drawer-open {
 
 @include mq(md) {
   .header__logo {
-    max-width: rem(100);
+    max-width: rem(160);
   }
 }

@@ -3,6 +3,8 @@
 .slide-image {
   margin-top: rem(40);
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .image-swiper {
