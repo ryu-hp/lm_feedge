@@ -999,6 +999,7 @@ body.drawer-open {
   height: 64px !important;
   position: static !important;
   margin: 0 !important;
+  background-size: contain;
 }
 
 .interview__swiper-pagination .swiper-button-prev {
@@ -1028,8 +1029,8 @@ body.drawer-open {
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
   border: none;
-  height: 64px;
-  width: 64px;
+  height: 100%;
+  width: 100%;
 }
 
 .swiper-button-prev-interview {
@@ -1193,6 +1194,10 @@ body.drawer-open {
   }
   .interview__modal-text {
     max-width: 100%;
+  }
+  .interview__swiper-pagination * {
+    width: 3rem !important;
+    height: 3rem !important;
   }
 }
 .section--numbers {

@@ -136,6 +136,7 @@
   height: 64px !important;
   position: static !important;
   margin: 0 !important; 
+  background-size: contain;
 }
 .interview__swiper-pagination .swiper-button-prev {
   background-image: url(/wp-content/themes/freedge/image/interview-prev.svg);
@@ -156,8 +157,8 @@
   font-size: 20px;
   transition: background 0.2s;
   border: none;
-  height: 64px;
-  width: 64px;
+  height: 100%;
+  width: 100%;
 }
 
 .swiper-button-prev-interview {
@@ -293,6 +294,10 @@
   }
   .interview__modal-text {
     max-width: 100%;
+  }
+  .interview__swiper-pagination * {
+    width: rem(48) !important;
+    height: rem(48) !important;
   }
 }
 

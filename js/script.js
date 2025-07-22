@@ -1,34 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // Swiper for about section images
-  // const imageSwiper = new Swiper('.image-swiper', {
-  //   slidesPerView: 'auto',
-  //   loop: true,
-  //   centeredSlides: true,
-  //   spaceBetween: 28,
-  //   allowTouchMove: false,
-  //   freeMode: false,
-  //   freeModeMomentum: false,
-  //   speed: 6000, // スライドアニメーションの速度（ミリ秒）
-  //   autoplay: {
-  //     delay: 1, // 最小の遅延でスムーズな流れを維持
-  //     disableOnInteraction: false,
-  //     pauseOnMouseEnter: false,
-  //   },
-  //   loopAdditionalSlides: 1, // ループ時のスムーズさを向上
-  //   slidesPerGroup: 1,
-  //   // 上下中央寄せ
-  //   on: {
-  //     init: function() {
-  //       document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {
-  //         slide.style.display = 'flex';
-  //         slide.style.alignItems = 'center';
-  //         slide.style.justifyContent = 'center';
-  //       });
-  //     }
-  //   }
-  // });
-    // Swiper for about section images
   const imageSwiper = new Swiper('.image-swiper', {
     slidesPerView: 'auto',
     loop: true,
@@ -76,11 +47,16 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Interview Swiper
+  // 画面サイズに応じてinitialSlideを設定
+  const isPC = window.innerWidth > 768;
+  const initialSlideIndex = isPC ? 1 : Math.floor(document.querySelectorAll('.interview-swiper .swiper-slide').length / 2);
+  
   const interviewSwiper = new Swiper('.interview-swiper', {
     slidesPerView: 'auto',
     centeredSlides: true,
     spaceBetween: 32,
     loop: true,
+    initialSlide: initialSlideIndex, // PCでは1（左から2番目）、スマホでは中央
     navigation: {
       nextEl: '.swiper-button-next-interview',
       prevEl: '.swiper-button-prev-interview',
@@ -88,7 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
     on: {
       init: function() {
         document.querySelectorAll('.interview-swiper .swiper-slide').forEach(slide => {
-          slide.style.width = '340px';
+          // 画面サイズに応じてスライド幅を設定
+          if (window.innerWidth <= 768) {
+            slide.style.width = '70vw';
+          } else {
+            slide.style.width = '340px';
+          }
         });
       }
     }
@@ -244,6 +225,28 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('FAQ questions:', faqQuestions); // デバッグ用
     console.log('FAQ items:', faqItems); // デバッグ用
   }, 1000); // 1秒後に確認
+
+  // 画面リサイズ時にアクティブスライドを調整
+  window.addEventListener('resize', () => {
+    const isPC = window.innerWidth > 768;
+    const targetSlide = isPC ? 1 : Math.floor(document.querySelectorAll('.interview-swiper .swiper-slide').length / 2);
+    
+    // スライドサイズも調整
+    document.querySelectorAll('.interview-swiper .swiper-slide').forEach(slide => {
+      if (window.innerWidth <= 768) {
+        slide.style.width = '70vw';
+      } else {
+        slide.style.width = '340px';
+      }
+    });
+    
+    // リサイズ後にスライドを調整
+    setTimeout(() => {
+      if (interviewSwiper && !interviewSwiper.destroyed) {
+        interviewSwiper.slideTo(targetSlide, 300);
+      }
+    }, 100);
+  });
 
   // スクロールアニメーション機能
   function fadeAnimation() {
