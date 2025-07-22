@@ -329,7 +329,7 @@ select::-ms-expand {
   font-size: 1.625rem;
   position: fixed;
   top: 0;
-  z-index: 10;
+  z-index: 50;
   width: 100%;
 }
 
@@ -611,6 +611,7 @@ body.drawer-open {
   padding: 5rem 0;
   position: relative;
   z-index: 1;
+  overflow-x: clip;
 }
 .section--about::after {
   content: "";
@@ -627,6 +628,10 @@ body.drawer-open {
   aspect-ratio: 1802/784.84;
 }
 
+.section__inner--about {
+  max-width: 1100px;
+}
+
 .about__text {
   font-size: 1.125rem;
   line-height: 1.5;
@@ -637,9 +642,9 @@ body.drawer-open {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -654,7 +659,7 @@ body.drawer-open {
 }
 
 .section__title.section__title--about {
-  max-width: 37.875rem;
+  max-width: 31.25rem;
   margin-bottom: 0;
 }
 
@@ -1099,7 +1104,7 @@ body.drawer-open {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: auto;
-  z-index: 100;
+  z-index: 1100;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1225,6 +1230,7 @@ body.drawer-open {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    padding: 1.25rem;
   }
   .interview__modal-image {
     max-width: 100%;
@@ -2739,7 +2745,7 @@ input[type=file] {
   position: fixed;
   bottom: 2.5rem;
   right: 2.5rem;
-  z-index: 9;
+  z-index: 50;
   border: none;
   cursor: pointer;
   -webkit-transition: all 0.3s ease;

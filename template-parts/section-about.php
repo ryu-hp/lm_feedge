@@ -1,5 +1,5 @@
 <section class="section section--about" id="about">
-  <div class="section__inner inner">
+  <div class="section__inner inner section__inner--about">
     <div class="about__flex">
       <h2 class="section__title section__title--about js-fadeInUp">
         <div class="about__title about__title--top">
