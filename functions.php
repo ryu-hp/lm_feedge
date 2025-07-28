@@ -15,6 +15,9 @@ function lm_feedge_scripts() {
   wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
   wp_enqueue_style('lm-feedge-style', get_template_directory_uri() . '/css/style.css', array(), $version);
   wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js', array('swiper'), $version, true);
+  
+  // SpeakerDeck埋め込みスクリプト
+  wp_enqueue_script('speakerdeck-embed', 'https://speakerdeck.com/assets/embed.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'lm_feedge_scripts');
 

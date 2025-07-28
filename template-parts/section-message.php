@@ -2,7 +2,7 @@
   <div class="section__inner inner">
     <div class="message__flex">
       <div class="message__image js-fadeInUp">
-        <img src="<?php echo get_template_directory_uri(); ?>/image/ceo_image.jpg" alt="代表取締役 松原 充芳">
+        <img src="<?php echo get_template_directory_uri(); ?>/image/recruite_message_ceo_image.webp" alt="代表取締役 松原 充芳">
       </div>
       <div class="message__text-group">
         <h2 class="section__title section__title--message js-fadeInUp">MESSAGE</h2>

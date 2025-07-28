@@ -44,6 +44,11 @@ body {
   font-family: "Noto Sans JP", sans-serif;
 }
 
+main {
+  position: relative;
+  z-index: 1;
+}
+
 .container {
   width: 100%;
   max-width: calc(1440px + 3.75rem);
@@ -416,6 +421,8 @@ select::-ms-expand {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    width: 32px;
+    height: 18px;
   }
 }
 
@@ -714,6 +721,25 @@ body.drawer-open {
   background-color: #F3F8FE;
 }
 
+.section--work-style .inner {
+  max-width: 770px;
+}
+
+@media screen and (max-width: 1499px) {
+  .section--work-style .inner {
+    max-width: 1135px;
+  }
+}
+@media screen and (max-width: 1134px) {
+  .section--work-style .inner {
+    max-width: 770px;
+  }
+}
+@media screen and (max-width: 385px) {
+  .section--work-style .inner {
+    max-width: 24.0625rem;
+  }
+}
 .section__title.section__title--work-style {
   text-align: left;
 }
@@ -841,30 +867,26 @@ body.drawer-open {
   }
   .work__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
   }
   .work__item {
     width: 100%;
     height: auto;
-    padding: 1.25rem;
+    padding: 0.875rem;
   }
   .work__item-number {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
   }
-  .work__item-text-head {
-    font-size: 1.25rem;
+  .work__item-head {
+    font-size: 0.875rem;
   }
   .work__item-description {
-    font-size: 1rem;
+    font-size: 0.875rem;
   }
   .work__item-image {
     max-width: 3rem;
-    margin-top: 1rem;
-  }
-}
-@media screen and (max-width: 400px) {
-  .work__grid {
-    grid-template-columns: repeat(1, 1fr);
+    margin-top: auto;
   }
 }
 .section--interview {
@@ -1104,7 +1126,7 @@ body.drawer-open {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-y: auto;
-  z-index: 1100;
+  z-index: 1200;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1165,7 +1187,6 @@ body.drawer-open {
   position: absolute;
   top: 35px;
   right: 35px;
-  width: 32px;
   height: 32px;
   cursor: pointer;
 }
@@ -1208,6 +1229,11 @@ body.drawer-open {
     text-align: left;
     font-size: 2rem;
   }
+  .interview__modal-cancel::before,
+  .interview__modal-cancel::after {
+    width: 100%;
+    height: 4px;
+  }
   .interview__name {
     font-size: 1rem;
   }
@@ -1238,6 +1264,12 @@ body.drawer-open {
   }
   .interview__modal-text {
     max-width: 100%;
+  }
+  .interview__modal-cancel {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: 1%;
+    right: 1%;
   }
   .interview__swiper-pagination * {
     width: 3rem !important;

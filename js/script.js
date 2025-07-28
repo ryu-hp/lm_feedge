@@ -81,7 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
     slide.addEventListener('click', () => {
       const modalId = slide.dataset.modal;
       const modal = document.getElementById(modalId);
-      if (modal) modal.classList.add('is-open');
+      if (modal) {
+        modal.classList.add('is-open');
+        // モーダルが開いたときにmainのz-indexを60に設定
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '60';
+        }
+      }
     });
   });
 
@@ -90,7 +97,14 @@ document.addEventListener('DOMContentLoaded', () => {
     cancel.addEventListener('click', (e) => {
       e.stopPropagation();
       const modal = cancel.closest('.interview__modal');
-      if (modal) modal.classList.remove('is-open');
+      if (modal) {
+        modal.classList.remove('is-open');
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
+      }
     });
   });
 
@@ -99,6 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', (e) => {
       if (e.target.classList.contains('interview__modal')) {
         modal.classList.remove('is-open');
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
       }
     });
   });
@@ -136,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modal) {
         modal.classList.add('is-open');
         document.body.style.overflow = 'hidden'; // スクロールを無効化
+        // モーダルが開いたときにmainのz-indexを60に設定
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '60';
+        }
       }
     });
   });
@@ -148,6 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modal) {
         modal.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロールを有効化
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
       }
     });
   });
@@ -159,6 +188,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modal) {
         modal.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロールを有効化
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
       }
     });
   });
@@ -169,6 +203,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.target.classList.contains('job-modal')) {
         modal.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロールを有効化
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
       }
     });
   });
@@ -213,6 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
       if (modal) {
         modal.classList.remove('is-open');
         document.body.style.overflow = ''; // スクロールを有効化
+        // モーダルが閉じたときにmainのz-indexを元に戻す
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.style.zIndex = '';
+        }
       }
     });
   });
@@ -273,10 +317,28 @@ document.addEventListener('DOMContentLoaded', () => {
   // ページトップボタンの表示/非表示制御
   function togglePageTopButton() {
     const pageTopButton = document.getElementById('page-top');
+    const footer = document.querySelector('.footer');
+    
     if (window.pageYOffset > 300) {
       pageTopButton.classList.add('visible');
     } else {
       pageTopButton.classList.remove('visible');
+    }
+    
+    // PCのときのみフッターが画面に現れたときにbottomを9remに変更
+    if (footer && window.innerWidth > 768) {
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // フッターが画面内に現れたかどうかを判定
+      if (footerRect.top < windowHeight) {
+        pageTopButton.style.bottom = '9rem';
+      } else {
+        pageTopButton.style.bottom = ''; // デフォルト値に戻す
+      }
+    } else if (window.innerWidth <= 768) {
+      // スマホ・タブレットの場合はデフォルト値に戻す
+      pageTopButton.style.bottom = '';
     }
   }
 

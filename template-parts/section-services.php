@@ -7,7 +7,7 @@
     <?php
     // our_services投稿タイプからデータを取得
     $args = [
-      'post_type' => 'our_services',
+      'post_type' => 'our_servはこれをices',
       'posts_per_page' => 1,
       'orderby' => 'date',
       'order' => 'DESC'
@@ -22,9 +22,9 @@
         $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
     ?>
       <?php if (!empty($pdf_url) && !empty($image_url)): ?>
-        <a href="<?php echo esc_url($pdf_url); ?>" target="_blank" class="services__pdf js-fadeInUp">
-          <img src="<?php echo esc_url($image_url); ?>" alt="会社案内の資料">
-        </a>
+        <div class="services__pdf js-fadeInUp">
+          <iframe class="speakerdeck-iframe" frameborder="0" src="https://speakerdeck.com/player/5db1dff78b434ad293858e23fa1cff3c" title="FREEDGE_pdf_01" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 396;" data-ratio="1.4141414141414141"></iframe>
+        </div>
       <?php endif; ?>
     <?php
       endwhile;

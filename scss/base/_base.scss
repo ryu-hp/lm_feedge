@@ -34,6 +34,10 @@ body {
     background-color: #F3F7FF;
     font-family: $base-font-family;
 }
+main {
+    position: relative;
+    z-index: 1;
+}
 
 // index.html では container クラスを使用しているため
 .container {
