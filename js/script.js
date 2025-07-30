@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const imageSwiper = new Swiper('.image-swiper', {
     slidesPerView: 'auto',
     loop: true,
-    centeredSlides: true,
+    // centeredSlides: true,
     spaceBetween: 28,
     allowTouchMove: false,
     speed: 3000,
