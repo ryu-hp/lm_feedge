@@ -20,12 +20,14 @@
           $interview_query = new WP_Query($args);
           $modal_count = 0;
           if ($interview_query->have_posts()):
-            while ($interview_query->have_posts()): $interview_query->the_post();
-              $modal_count++;
-              $name_initial = get_post_meta(get_the_ID(), 'interview_name_initial', true);
-              $career = get_post_meta(get_the_ID(), 'interview_career', true);
-              $image_id = get_post_meta(get_the_ID(), 'interview_image', true);
-              $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+            // 3回繰り返し表示するためのループ
+            for ($repeat = 0; $repeat < 3; $repeat++):
+              while ($interview_query->have_posts()): $interview_query->the_post();
+                $modal_count++;
+                $name_initial = get_post_meta(get_the_ID(), 'interview_name_initial', true);
+                $career = get_post_meta(get_the_ID(), 'interview_career', true);
+                $image_id = get_post_meta(get_the_ID(), 'interview_image', true);
+                $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'large') : '';
           ?>
           <div class="swiper-slide" data-modal="modal-<?php echo $modal_count; ?>">
             <div class="interview__item">
@@ -40,7 +42,13 @@
               </div>
             </div>
           </div>
-          <?php endwhile; wp_reset_postdata(); endif; ?>
+          <?php 
+              endwhile; 
+              // 2回目と3回目のループのためにクエリをリセット
+              $interview_query->rewind_posts();
+            endfor;
+            wp_reset_postdata(); 
+          endif; ?>
         </div>
       </div>
       <div class="interview__swiper-pagination">
@@ -59,7 +67,7 @@
           $name_initial = get_post_meta(get_the_ID(), 'interview_name_initial', true);
           $career = get_post_meta(get_the_ID(), 'interview_career', true);
           $image_id = get_post_meta(get_the_ID(), 'interview_image', true);
-          $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'medium') : '';
+          $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'large') : '';
           $self_introduction = get_post_meta(get_the_ID(), 'self_introduction', true);
           $reason = get_post_meta(get_the_ID(), 'reason', true);
           $hobby = get_post_meta(get_the_ID(), 'hobby', true);

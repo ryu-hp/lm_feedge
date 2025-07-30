@@ -107,6 +107,7 @@
   width: 100%;
   display: block;
   object-fit: cover;
+  aspect-ratio: 370 / 490; // 画像のアスペクト比に合わせて調整
 }
 
 .interview__item-text {
@@ -257,6 +258,7 @@
   top: 35px;
   right: 35px;
   height: 32px;
+  width: 32px;
   cursor: pointer;
 }
 .interview__modal-cancel::before,
