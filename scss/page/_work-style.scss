@@ -5,22 +5,7 @@
   background-color: $color-bg_gray;
 }
 .section--work-style .inner {
-  max-width: calc(345px + (345px + 20px)*1 + 60px);
-}
-@media screen and (max-width:1499px) {
-  .section--work-style .inner {
-    max-width: calc(345px + (345px + 20px)*2 + 60px);
-  }
-}
-@media screen and (max-width:1134px) {
-  .section--work-style .inner {
-    max-width: calc(345px + (345px + 20px)*1 + 60px);
-  }
-}
-@media screen and (max-width:385px) {
-  .section--work-style .inner {
-    max-width: calc(rem(345) + ($padding-sp * 2) );
-  }
+  max-width: calc(345px + (345px + 20px)*2 + 60px);
 }
 
 .section__title.section__title--work-style {
@@ -34,23 +19,35 @@
 }
 
 .work__grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
 .work__item {
   background: linear-gradient(45deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
   color: #fff;
-  padding: 20px;
   border-radius: 12px;
-  display: flex;
-  flex-direction: column;
-  width: 345px;
-  height: 345px;
+  width: 100%;
   box-sizing: border-box;
 }
-
+.work__item::before {
+  content: "";
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+}
+.work__item-container {
+  padding: 20px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 .work__item-number {
   font-size: 24px;
   font-weight: 900;
@@ -116,8 +113,19 @@
   letter-spacing: -0.02em;
 }
 .work__item-image {
-  max-width: rem(110);
+  max-width: 35%;
   width: 100%;
+}
+@media screen and (max-width:1135px) {
+  .work__item-number {
+    font-size: calc(#{32} * 100vw / #{1135});
+  }
+  .work__item-head {
+    font-size: calc(#{24} * 100vw / #{1135});
+  }
+  .work__item-description {
+    font-size: calc(#{16} * 100vw / #{1135});
+  }
 }
 
 @include mq(md) {
@@ -140,22 +148,28 @@
   .work__item {
     width: 100%;
     height: auto;
-    padding: rem(14);
   }
-  
+  .work__item::before {
+    padding-top: 125%;
+  }
+  .work__item-container {
+    padding: rem(8);
+  }
   .work__item-number {
-    font-size: rem(14);
+    font-size: rem(16);
+    margin-bottom: 0;
   }
   
   .work__item-head {
-    font-size: rem(14);
+    font-size: rem(12);
+    margin-bottom: rem(6);
   }
   
   .work__item-description {
-    font-size: rem(14);
+    font-size: rem(6);
   }
   .work__item-image {
-    max-width: rem(48);
+    max-width: 30%;
     margin-top: auto;
   }
 }

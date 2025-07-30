@@ -6,16 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     centeredSlides: true,
     spaceBetween: 28,
     allowTouchMove: false,
-    freeMode: false,
-    freeModeMomentum: false,
-    speed: 6000,
+    speed: 3000,
+    updateOnImagesReady: true,
+    reverseDirection: true,
     autoplay: {
-      delay: 1,
+      delay: 0,
       disableOnInteraction: false,
       pauseOnMouseEnter: false,
     },
-    loopAdditionalSlides: 1,
+    loopedSlides: 3,
     slidesPerGroup: 1,
+    simulateTouch: false,
     on: {
       init: function() {
         document.querySelectorAll('.image-swiper .swiper-slide').forEach(slide => {

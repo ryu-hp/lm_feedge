@@ -25,15 +25,17 @@
             $work_style_image_url = $work_style_image_id ? wp_get_attachment_image_url($work_style_image_id, 'full') : '';
         ?>
         <div class="work__item js-fadeInUp">
-          <p class="work__item-number"><?php printf('%02d', $counter); ?></p>
-          <div class="work__item-text">
-            <p class="work__item-head"><?php echo esc_html($work_style_head); ?></p>
-            <p class="work__item-description"><?php echo esc_html($work_style_description); ?></p>
-          </div>
-          <div class="work__item-image">
-            <?php if (!empty($work_style_image_url)): ?>
-              <img src="<?php echo esc_url($work_style_image_url); ?>" alt="<?php echo esc_attr($work_style_head); ?>">
-            <?php endif; ?>
+          <div class="work__item-container">
+            <p class="work__item-number"><?php printf('%02d', $counter); ?></p>
+            <div class="work__item-text">
+              <p class="work__item-head"><?php echo esc_html($work_style_head); ?></p>
+              <p class="work__item-description"><?php echo esc_html($work_style_description); ?></p>
+            </div>
+            <div class="work__item-image">
+              <?php if (!empty($work_style_image_url)): ?>
+                <img src="<?php echo esc_url($work_style_image_url); ?>" alt="<?php echo esc_attr($work_style_head); ?>">
+              <?php endif; ?>
+            </div>
           </div>
         </div>
         <?php

@@ -24,7 +24,7 @@
       endif;
       
       // 3回繰り返して出力
-      for ($repeat = 1; $repeat <= 3; $repeat++):
+      for ($repeat = 1; $repeat <= 4; $repeat++):
         foreach ($slide_images as $image_url):
       ?>
         <div class="swiper-slide">
