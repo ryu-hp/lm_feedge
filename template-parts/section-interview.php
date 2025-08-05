@@ -22,14 +22,15 @@
           if ($interview_query->have_posts()):
             // 3回繰り返し表示するためのループ
             for ($repeat = 0; $repeat < 3; $repeat++):
+              $post_count = 0; // 各繰り返しでリセット
               while ($interview_query->have_posts()): $interview_query->the_post();
-                $modal_count++;
+                $post_count++;
                 $name_initial = get_post_meta(get_the_ID(), 'interview_name_initial', true);
                 $career = get_post_meta(get_the_ID(), 'interview_career', true);
                 $image_id = get_post_meta(get_the_ID(), 'interview_image', true);
                 $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'large') : '';
           ?>
-          <div class="swiper-slide" data-modal="modal-<?php echo $modal_count; ?>">
+          <div class="swiper-slide" data-modal="modal-<?php echo $post_count; ?>">
             <div class="interview__item">
               <div class="interview__item-image">
                 <?php if (!empty($image_url)): ?>

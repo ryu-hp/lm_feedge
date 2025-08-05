@@ -42,7 +42,6 @@
     <button class="header__hamburger hamburger" id="hamburger-btn">
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
-      <span class="hamburger__line"></span>
     </button>
     
     <!-- PCナビゲーション -->
