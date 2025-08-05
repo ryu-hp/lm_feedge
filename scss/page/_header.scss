@@ -15,6 +15,8 @@
   align-items: center;
   justify-content: space-between;
   padding: rem(36) rem(20);
+  position: relative;
+  z-index: 1024;
 }
 .header__logo {
   max-width: rem(207);
@@ -67,6 +69,7 @@
   border: none;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
   
   @media screen and (max-width: 767px) {
     display: flex;
@@ -81,18 +84,24 @@
   background-color: $color-theme;
   transition: all 0.3s ease;
   transform-origin: center;
+  position: absolute;
+  right: 0;
+}
+.hamburger__line:nth-child(1) {
+  top: 0;
 }
 .hamburger__line:nth-child(2) {
   width: 75%;
   margin-left: auto;
+  bottom: 0;
 }
 
 .hamburger.is-active .hamburger__line:nth-child(1) {
-  transform: translateY(4px) rotate(30deg);
+  transform: translateY(5px) rotate(30deg);
 }
 
 .hamburger.is-active .hamburger__line:nth-child(2) {
-  transform: translateY(-4px) rotate(-30deg);
+  transform: translateY(-5px) rotate(-30deg);
   width: 100%;
 }
 
@@ -138,10 +147,10 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 80%;
-  max-width: rem(300);
+  width: 100%;
+  max-width: 100%;
   height: 100%;
-  background-color: $color-white;
+  background: linear-gradient(155deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
   transform: translateX(100%);
   transition: transform 0.3s ease;
   padding: rem(80) rem(20) rem(20);
@@ -160,43 +169,55 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  padding: rem(60) 0;
 }
 
-.drawer__item {
-  border-bottom: 1px solid #f0f0f0;
-  
-  &:last-child {
-    border-bottom: none;
-  }
-}
 
 .drawer__link {
   display: block;
-  padding: rem(16) 0;
-  color: $color-black;
+  padding: rem(14) 0;
+  color: $color-white;
   text-decoration: none;
   font-family: $second-font-family;
   font-weight: $bold;
-  font-size: rem(18);
+  font-size: rem(44);
   text-transform: uppercase;
   transition: color 0.3s ease;
+  line-height: 1;
   
   &:hover {
     color: $color-theme;
   }
   
   &--primary {
-    background-color: $color-theme;
-    color: $color-white;
+    background: $color-white;
+    color: $color-theme;
     padding: rem(12) rem(16);
     border-radius: rem(4);
     margin-top: rem(20);
     text-align: center;
+    position: relative;
+    text-align: left;
+    line-height: 1;
     
     &:hover {
-      color: $color-white;
       opacity: 0.8;
     }
+  }
+  &--primary::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: rem(18);
+    width: rem(19);
+    height: rem(9);
+    color: $color-theme;
+    background-image: url('../image/simple-arrow_blue.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 }
 
@@ -217,5 +238,6 @@ body.drawer-open {
   }
   .inner.header__inner {
     padding: rem(24) rem(15);
+    background-color: $color-white;
   }
 }

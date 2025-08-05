@@ -238,7 +238,7 @@ input[type="file"] {
 
 @include mq(md) {
   .section__title.section__title--entry-form {
-    font-size: rem(48);
+    font-size: rem(44);
     margin-bottom: rem(32);
   }
   .form-item__input--radio .wpcf7-list-item-label {

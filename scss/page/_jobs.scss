@@ -195,6 +195,9 @@
   text-align: center;
 }
 @include mq(md) {
+  .section__title.section__title--jobs {
+    font-size: rem(44);
+  }
   .jobs__title-sub {
     font-size: rem(16);
   }

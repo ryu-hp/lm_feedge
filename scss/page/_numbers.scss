@@ -86,15 +86,21 @@
 }
 @include mq(md) {
   .section__title.section__title--numbers {
-    font-size: rem(32);
+    font-size: rem(24);
+  }
+  .section__title-sub.section__title-sub--numbers {
+    font-size: rem(16);
+  }
+  .numbers__item {
+    padding: rem(20) rem(16);
   }
   .numbers__item .numbers__label {
     font-size: rem(16);
   }
-  .numbers__value {
-    font-size: rem(24);
+  .numbers__item .numbers__value {
+    font-size: rem(20);
   }
   .numbers__item .numbers__value span {
-    font-size: rem(60);
+    font-size: rem(52);
   }
 }

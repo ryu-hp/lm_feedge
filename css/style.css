@@ -273,7 +273,7 @@ select::-ms-expand {
     padding: 6.25rem 0;
   }
   .section__title {
-    font-size: 2.5rem;
+    font-size: 2.75rem;
     margin-bottom: 2.5rem;
   }
 }
@@ -350,6 +350,8 @@ select::-ms-expand {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2.25rem 1.25rem;
+  position: relative;
+  z-index: 1024;
 }
 
 .header__logo {
@@ -415,6 +417,7 @@ select::-ms-expand {
   border: none;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   .header__hamburger {
@@ -434,21 +437,28 @@ select::-ms-expand {
   transition: all 0.3s ease;
   -webkit-transform-origin: center;
           transform-origin: center;
+  position: absolute;
+  right: 0;
+}
+
+.hamburger__line:nth-child(1) {
+  top: 0;
 }
 
 .hamburger__line:nth-child(2) {
   width: 75%;
   margin-left: auto;
+  bottom: 0;
 }
 
 .hamburger.is-active .hamburger__line:nth-child(1) {
-  -webkit-transform: translateY(4px) rotate(30deg);
-          transform: translateY(4px) rotate(30deg);
+  -webkit-transform: translateY(5px) rotate(30deg);
+          transform: translateY(5px) rotate(30deg);
 }
 
 .hamburger.is-active .hamburger__line:nth-child(2) {
-  -webkit-transform: translateY(-4px) rotate(-30deg);
-          transform: translateY(-4px) rotate(-30deg);
+  -webkit-transform: translateY(-5px) rotate(-30deg);
+          transform: translateY(-5px) rotate(-30deg);
   width: 100%;
 }
 
@@ -493,10 +503,10 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  width: 80%;
-  max-width: 18.75rem;
+  width: 100%;
+  max-width: 100%;
   height: 100%;
-  background-color: #ffffff;
+  background: linear-gradient(155deg, #0058B4 0%, #0070C5 50%, #089BE9 100%);
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
   -webkit-transition: -webkit-transform 0.3s ease;
@@ -519,41 +529,54 @@ select::-ms-expand {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.drawer__item {
-  border-bottom: 1px solid #f0f0f0;
-}
-.drawer__item:last-child {
-  border-bottom: none;
+  padding: 3.75rem 0;
 }
 
 .drawer__link {
   display: block;
-  padding: 1rem 0;
-  color: #000000;
+  padding: 0.875rem 0;
+  color: #ffffff;
   text-decoration: none;
   font-family: "Bebas Neue", sans-serif;
   font-weight: 700;
-  font-size: 1.125rem;
+  font-size: 2.75rem;
   text-transform: uppercase;
   -webkit-transition: color 0.3s ease;
   transition: color 0.3s ease;
+  line-height: 1;
 }
 .drawer__link:hover {
   color: #025CB4;
 }
 .drawer__link--primary {
-  background-color: #025CB4;
-  color: #ffffff;
+  background: #ffffff;
+  color: #025CB4;
   padding: 0.75rem 1rem;
   border-radius: 0.25rem;
   margin-top: 1.25rem;
   text-align: center;
+  position: relative;
+  text-align: left;
+  line-height: 1;
 }
 .drawer__link--primary:hover {
-  color: #ffffff;
   opacity: 0.8;
+}
+.drawer__link--primary::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  right: 1.125rem;
+  width: 1.1875rem;
+  height: 0.5625rem;
+  color: #025CB4;
+  background-image: url("../image/simple-arrow_blue.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body.drawer-open {
@@ -572,6 +595,7 @@ body.drawer-open {
   }
   .inner.header__inner {
     padding: 1.5rem 0.9375rem;
+    background-color: #ffffff;
   }
 }
 .section--kv {
@@ -609,20 +633,23 @@ body.drawer-open {
 
 @media screen and (max-width: 767px) {
   .section--kv {
-    height: 83.3333333333vw;
+    height: 154.4529262087vw;
+    background-image: url("../image/KV_bg_sp.jpg");
   }
   .kv__text-group {
     left: 50%;
     -webkit-transform: translateX(-50%);
             transform: translateX(-50%);
-    bottom: 0;
-    width: 80%;
+    bottom: auto;
+    width: 78%;
+    top: 4%;
   }
   .kv__text {
     height: auto;
   }
   .kv__text--sub {
     font-size: 1rem;
+    margin-top: 0;
   }
 }
 .section--about {
@@ -1300,6 +1327,13 @@ body.drawer-open {
     top: 1%;
     right: 1%;
   }
+  .interview__swiper-pagination {
+    width: 7.5rem;
+    height: 3rem;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .interview__swiper-pagination * {
     width: 3rem !important;
     height: 3rem !important;
@@ -1402,16 +1436,22 @@ body.drawer-open {
 
 @media screen and (max-width: 767px) {
   .section__title.section__title--numbers {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  .section__title-sub.section__title-sub--numbers {
+    font-size: 1rem;
+  }
+  .numbers__item {
+    padding: 1.25rem 1rem;
   }
   .numbers__item .numbers__label {
     font-size: 1rem;
   }
-  .numbers__value {
-    font-size: 1.5rem;
+  .numbers__item .numbers__value {
+    font-size: 1.25rem;
   }
   .numbers__item .numbers__value span {
-    font-size: 3.75rem;
+    font-size: 3.25rem;
   }
 }
 .section--culture {
@@ -1559,7 +1599,7 @@ body.drawer-open {
 }
 @media screen and (max-width: 767px) {
   .section--message .section__title {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
   .section--message .message__text {
     font-size: 1rem;
@@ -1843,6 +1883,9 @@ body.drawer-open {
 }
 
 @media screen and (max-width: 767px) {
+  .section__title.section__title--jobs {
+    font-size: 2.75rem;
+  }
   .jobs__title-sub {
     font-size: 1rem;
   }
@@ -2028,7 +2071,7 @@ body.drawer-open {
 
 @media screen and (max-width: 767px) {
   .section__title.section__title--faq {
-    font-size: 2rem;
+    font-size: 2.75rem;
     margin-bottom: 2rem;
   }
   .faq__question, .faq__answer {
@@ -2092,7 +2135,7 @@ body.drawer-open {
 
 @media screen and (max-width: 767px) {
   .section__title.section__title--services {
-    font-size: 3rem;
+    font-size: 2.75rem;
     margin-bottom: 1rem;
   }
   .services__title-sub.services__title-sub--services {
@@ -2268,7 +2311,7 @@ body.drawer-open {
 
 @media (max-width: 768px) {
   .section__title.section__title--entry {
-    font-size: 3rem;
+    font-size: 2.75rem;
     margin-bottom: 2rem;
   }
   .entry__flow {
@@ -2300,7 +2343,7 @@ body.drawer-open {
     padding: 0.5rem 1rem;
   }
   .entry__flow-text {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   .entry__flow-description {
     font-size: 1rem;
@@ -2605,7 +2648,7 @@ input[type=file] {
 
 @media screen and (max-width: 767px) {
   .section__title.section__title--entry-form {
-    font-size: 3rem;
+    font-size: 2.75rem;
     margin-bottom: 2rem;
   }
   .form-item__input--radio .wpcf7-list-item-label {

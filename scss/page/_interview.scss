@@ -325,6 +325,11 @@
     top: 1%;
     right: 1%;
   }
+  .interview__swiper-pagination {
+    width: rem(120);
+    height: rem(48);
+    justify-content: space-between;
+  }
   .interview__swiper-pagination * {
     width: rem(48) !important;
     height: rem(48) !important;

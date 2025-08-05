@@ -30,18 +30,21 @@
 }
 @include mq(md) {
   .section--kv {
-    height: calc(1600 / 1920 * 100vw);
+    height: calc(607 / 393 * 100vw);
+    background-image: url('../image/KV_bg_sp.jpg');
   }
   .kv__text-group {
     left: 50%;
     transform: translateX(-50%);
-    bottom: 0;
-    width: 80%;
+    bottom: auto;
+    width: 78%;
+    top: 4%;
   }
   .kv__text {
     height: auto;
   }
   .kv__text--sub {
     font-size: rem(16);
+    margin-top: 0;
   }
 }
