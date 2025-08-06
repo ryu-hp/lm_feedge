@@ -286,7 +286,7 @@
   }
   .section__title.section__title--interview {
     text-align: left;
-    font-size: rem(32);
+    font-size: rem(44);
   }
   .interview__modal-cancel::before,
   .interview__modal-cancel::after {
@@ -333,6 +333,7 @@
   .interview__swiper-pagination * {
     width: rem(48) !important;
     height: rem(48) !important;
+    background-repeat: no-repeat;
   }
 }
 
