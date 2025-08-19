@@ -35,10 +35,7 @@
   text-align: center;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media (max-width: 480px) {
-    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
 
@@ -92,15 +89,15 @@
     font-size: rem(16);
   }
   .numbers__item {
-    padding: rem(20) rem(16);
+    padding: rem(8) rem(8);
   }
   .numbers__item .numbers__label {
-    font-size: rem(16);
+    font-size: rem(8);
   }
   .numbers__item .numbers__value {
-    font-size: rem(20);
+    font-size: rem(8);
   }
   .numbers__item .numbers__value span {
-    font-size: rem(52);
+    font-size: rem(24);
   }
 }

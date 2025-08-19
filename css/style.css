@@ -1377,12 +1377,7 @@ body.drawer-open {
 }
 @media (max-width: 768px) {
   .numbers__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media (max-width: 480px) {
-  .numbers__grid {
-    grid-template-columns: 1fr;
+    gap: 0.75rem;
   }
 }
 
@@ -1443,16 +1438,16 @@ body.drawer-open {
     font-size: 1rem;
   }
   .numbers__item {
-    padding: 1.25rem 1rem;
+    padding: 0.5rem 0.5rem;
   }
   .numbers__item .numbers__label {
-    font-size: 1rem;
+    font-size: 0.5rem;
   }
   .numbers__item .numbers__value {
-    font-size: 1.25rem;
+    font-size: 0.5rem;
   }
   .numbers__item .numbers__value span {
-    font-size: 3.25rem;
+    font-size: 1.5rem;
   }
 }
 .section--culture {
@@ -2092,9 +2087,11 @@ body.drawer-open {
   }
   .faq__question::after {
     right: 0.125rem;
+    width: 1.25rem;
   }
   .faq__question::before {
-    right: 0.75rem;
+    right: 0.6875rem;
+    height: 1.25rem;
   }
   .faq__description {
     font-size: 1rem;

@@ -126,9 +126,11 @@
   }
   .faq__question::after {
     right: rem(2);
+    width: rem(20);
   }
   .faq__question::before {
-    right: rem(12);
+    right: rem(11);
+    height: rem(20);
   }
   .faq__description {
     font-size: rem(16);
