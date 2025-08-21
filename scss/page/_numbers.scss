@@ -82,6 +82,10 @@
   }
 }
 @include mq(md) {
+  .section--numbers {
+    padding-top: rem(24);
+    padding-bottom: rem(124);
+  }
   .section__title.section__title--numbers {
     font-size: rem(24);
   }
