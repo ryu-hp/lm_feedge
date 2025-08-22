@@ -2135,6 +2135,8 @@ body.drawer-open {
   display: block;
 }
 
+.sd-player-title {display: none !important;visibility: hidden !important;opacity: 0 !important;}
+
 @media screen and (max-width: 767px) {
   .section__title.section__title--services {
     font-size: 2.75rem;
