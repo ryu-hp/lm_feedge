@@ -20,11 +20,11 @@
         // $pdf_url = $pdf_id ? wp_get_attachment_url($pdf_id) : '';
         // $image_id = get_post_meta(get_the_ID(), 'our_services_image', true);
         // $image_url = $image_id ? wp_get_attachment_image_url($image_id, 'full') : '';
-        $speaker_deck_url = get_post_meta(get_the_ID(), 'speaker_deck_url', true);
+        $iframe_code = get_post_meta(get_the_ID(), 'iframe_code', true);
     ?>
-      <?php if (!empty($speaker_deck_url)): ?>
+      <?php if (!empty($iframe_code)): ?>
       <div class="services__pdf js-fadeInUp">
-        <iframe class="speakerdeck-iframe" frameborder="0" src="<?php echo esc_url($speaker_deck_url); ?>" title="FREEDGE_pdf_01" allowfullscreen="true" style="border: 0px; background: padding-box padding-box rgba(0, 0, 0, 0.1); margin: 0px; padding: 0px; border-radius: 6px; box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 40px; width: 100%; height: auto; aspect-ratio: 560 / 396;" data-ratio="1.4141414141414141"></iframe>
+        <?php echo $iframe_code; ?>
       </div>
       <?php endif; ?>
     <?php
