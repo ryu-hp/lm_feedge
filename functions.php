@@ -8,16 +8,28 @@ function lm_feedge_setup() {
 add_action('after_setup_theme', 'lm_feedge_setup');
 
 function lm_feedge_scripts() {
-  // 現在の日時をバージョンとして取得（キャッシュクリア用）
-  $version = date('YmdHis');
+  // CSSは常にキャッシュクリア、JSはテーマバージョン使用
+  $css_version = date('YmdHis');
+  $js_version = wp_get_theme()->get('Version');
   
-  wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), null);
-  wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), null, true);
-  wp_enqueue_style('lm-feedge-style', get_template_directory_uri() . '/css/style.css', array(), $version);
-  wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js', array('swiper'), $version, true);
+  // Swiperを確実に読み込み
+  wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css', array(), '11.0.0');
+  wp_enqueue_script('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js', array(), '11.0.0', true);
+  
+  // カスタムCSS/JS（キャッシュクリア用パラメータ付き）
+  $cache_param = '?v=' . date('YmdHis');
+  wp_enqueue_style('lm-feedge-style', get_template_directory_uri() . '/css/style.css' . $cache_param, array(), $css_version);
+  wp_enqueue_script('lm-feedge-script', get_template_directory_uri() . '/js/script.js' . $cache_param, array('swiper'), $js_version, true);
   
   // SpeakerDeck埋め込みスクリプト
   wp_enqueue_script('speakerdeck-embed', 'https://speakerdeck.com/assets/embed.js', array(), null, true);
+  
+  // デバッグ情報をブラウザに渡す
+  wp_localize_script('lm-feedge-script', 'themeData', array(
+    'debug' => WP_DEBUG,
+    'templateUrl' => get_template_directory_uri(),
+    'ajaxUrl' => admin_url('admin-ajax.php'),
+  ));
 }
 add_action('wp_enqueue_scripts', 'lm_feedge_scripts');
 

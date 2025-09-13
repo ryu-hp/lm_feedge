@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('DOM loaded'); // デバッグ用
+  
+  try {
+    // Swiperの存在確認
+    if (typeof Swiper === 'undefined') {
+      console.error('Swiper is not loaded');
+      return;
+    }
+    
+    console.log('Swiper loaded successfully'); // デバッグ用
 
-  const imageSwiper = new Swiper('.image-swiper', {
+    const imageSwiper = new Swiper('.image-swiper', {
     slidesPerView: 'auto',
     loop: true,
     // centeredSlides: true,
@@ -363,4 +373,8 @@ document.addEventListener('DOMContentLoaded', () => {
     fadeAnimation();
     togglePageTopButton();
   });
+  
+  } catch (error) {
+    console.error('JavaScript error occurred:', error);
+  }
 });
